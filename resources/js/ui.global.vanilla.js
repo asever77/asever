@@ -116,7 +116,7 @@ if (!Element.prototype.closest) {
 // };
 
 //utils module
-var pluginsName = 'netiveUI.plugins';
+var pluginsName = 'aseverUI.plugins';
 
 ;(function (win, doc, undefined) {
 	console.log('global js');
@@ -124,7 +124,7 @@ var pluginsName = 'netiveUI.plugins';
 	'use strict';
 
 	var global = '$plugins';
-	var namespace = 'netiveUI.plugins';
+	var namespace = 'aseverUI.plugins';
 
 	//jquery - on,off
 	var events = (function(){
