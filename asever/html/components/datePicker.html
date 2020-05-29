@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-datepicker">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer">
+
+	</div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">달력</h1>
+					<em>2019-12-31 수정 : 모바일 스타일 추가필요</em>
+				</div>
+				<p class="txt-s2">날짜 선택이나 기간 선택할때 사용한다.</p>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">Base Date Picker</h3>
+				<h4 class="h4">single</h4>
+				<div class="ui-datepicker" id="uiDatePicker1">
+					<input type="tel" id="uiDatePicker1Inp" class="ui-datepicker-inp inp-base" value="" data-min="2017-12-05" data-max="2022-12-30" title="시작일">
+					<button type="button" class="ui-datepicker-btn">
+						<i class="material-icons" aria-label="달력 열기">date_range</i>
+					</button>
+					<section class="ui-datepicker-wrap"></section>
+				</div>
+				<h4 class="h4">dual</h4>
+				<div class="ui-datepicker" id="uiDatePicker2">
+					<input type="tel" id="uiDatePicker2Inp" class="ui-datepicker-inp inp-base" value="" data-min="2017-11-05" data-max="2022-12-30" title="시작일">
+					<button type="button" class="ui-datepicker-btn">
+						<i class="material-icons" aria-label="달력 열기">date_range</i>
+					</button>
+					<section class="ui-datepicker-wrap"></section>
+				</div>
+
+				<h3 class="h3">Period Date picker</h3>
+				<h4 class="h4">single</h4>
+				<div class="form-dpmulti">		
+					<div class="ui-datepicker" id="uiDatePicker3">
+						<input type="tel" id="uiDatePicker3Inp" class="ui-datepicker-inp inp-base" value="" data-min="2019-12-01" data-max="2020-01-15" title="시작일">					
+						<button type="button" class="ui-datepicker-btn">
+							<i class="material-icons" aria-label="달력 열기">date_range</i>
+						</button>
+						<section class="ui-datepicker-wrap"></section>
+					</div>
+					<span class="txt-mark">~</span>
+					<div class="ui-datepicker">
+						<input type="tel" id="uiDatePicker3Inp_end" class="ui-datepicker-inp inp-base" value="" data-min="2019-12-01" data-max="2020-12-30" title="종료일" readonly>
+						<button type="button" class="ui-datepicker-btn" disabled>
+							<i class="material-icons">date_range</i>
+						</button>
+					</div>
+				</div>	
+				<h4 class="h4">dual</h4>
+				<div class="form-dpmulti">		
+					<div class="ui-datepicker" id="uiDatePicker4">
+						<input type="tel" id="uiDatePicker4Inp" class="ui-datepicker-inp inp-base" value="" data-min="2019-12-01" data-max="2020-02-15" title="시작일">					
+						<button type="button" class="ui-datepicker-btn">
+							<i class="material-icons" aria-label="달력 열기">date_range</i>
+						</button>
+						<section class="ui-datepicker-wrap"></section>
+					</div>
+					<span class="txt-mark">~</span>
+					<div class="ui-datepicker">
+						<input type="tel" id="uiDatePicker4Inp_end" class="ui-datepicker-inp inp-base" value="" data-min="2019-12-01" data-max="2020-12-30" title="종료일" readonly>
+						<button type="button" class="ui-datepicker-btn" disabled>
+							<i class="material-icons">date_range</i>
+						</button>
+					</div>
+				</div>	
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">Base type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div class="ui-datepicker inp-datepicker" id="uiDatePicker1"&gt;
+	&lt;input class="ui-datepicker-inp inp-base" type="tel" value="" data-min="2013-10-05" data-max="2020-12-01" title="시작일" id="uiDatePicker1Inp"&gt;
+	&lt;button type="button" class="ui-datepicker-btn"&gt;
+		&lt;i class="material-icons" aria-label="달력 열기"&gt;date_range&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;section class="ui-datepicker-wrap"&gt;&lt;/section&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+				<h3 class="h3">Period type</h3>			
+<div class="box-code">
+<pre>
+<code>
+&lt;div class="form-dpmulti"&gt;		
+	&lt;div class="ui-datepicker" id="uiDatePicker2"&gt;
+		&lt;input class="ui-datepicker-inp inp-base" type="tel" value="" data-min="2013-10-05" data-max="2020-12-01" title="시작일" id="uiDatePicker2Inp"&gt;
+		&lt;button type="button" class="ui-datepicker-btn"&gt;
+			&lt;i class="material-icons" aria-label="달력 열기"&gt;date_range&lt;/i&gt;
+		&lt;/button&gt;
+		&lt;section class="ui-datepicker-wrap"&gt;&lt;/section&gt;
+	&lt;/div&gt;
+	&lt;span class="txt-mark"&gt;~&lt;/span&gt;
+	&lt;div class="ui-datepicker"&gt;
+		&lt;input class="ui-datepicker-inp inp-base" type="tel" value="" data-min="2013-10-05" data-max="2020-12-01" title="종료일" id="uiDatePicker2Inp_end" readonly&gt;
+		&lt;button type="button" class="ui-datepicker-btn" disabled&gt;
+			&lt;i class="material-icons"&gt;date_range&lt;/i&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<div class="tbl-wrap">
+					<table class="tbl-base type-option">
+						<caption>옵션 설명</caption>
+						<thead>
+							<tr>
+								<th scope="col">태그</th>
+								<th scope="col">속성</th>
+								<th scope="col">값</th>
+								<th scope="col">설명</th>
+							</tr>
+						</thead>
+						<tbody class="txt-l">
+							<tr>
+								<th scope="row" rowspan="4">input type="tel"</th>
+								<th scope="row">data-min</th>
+								<td>2013-01-01</td>
+								<td>최소선택 년월일</td>
+							</tr>
+							<tr>
+								<th scope="row">data-max</th>
+								<td>2020-01-01</td>
+								<td>최대선택 년월일</td>
+							</tr>
+							<tr>
+								<th scope="row">id</th>
+								<td>유니크한 아이디이름 A</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">id (multi 일 경우)</th>
+								<td>유니크한 아이디이름 A + '_end'</td>
+								<td>시작일 아이디에 _end 를 붙인 이름 규칙으로 아이디 사용</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</div>
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiDatePicker</h3>
+<div class="box-code">
+<pre>
+<code>
+//single
+$plugins<span class="na">.uiDatePicker</span>({ <span class="s">
+	selector: ('.ui-datepicker'/'#uiDatePicker1'),
+	date_split: ('-'/'.'),
+	period: (false/true),
+	dual: (false/true),
+	title: (false/'datepicker title'),
+	shortDate: (false/true), //false:YYYYMMDD or true:DDMMYYYY,
+	dateMonths: new Array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'),
+	weekDay: new Array('일', '월', '화', '수', '목', '금', '토'),
+	callback: function(v){ console.log(v); },
+	openback: function(){ console.log('open callback'); },
+	closeback: function(){ console.log('close callback'); }</span>
+});
+</code>
+</pre>
+</div>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_05_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiDatePicker({ 
+					selector:'#uiDatePicker1', 
+					openback: function(){
+						console.log('open callback gg');
+						$('#baseHeader').stop().animate({
+							top:-50
+						},200)
+					},
+					closeback: function(){
+						console.log('close callback gg');
+						$('#baseHeader').stop().animate({
+							top:0
+						},200)
+					},
+					callback: function(v) {
+						console.log('callback: ', v);
+					}
+				});
+		
+				$plugins.uiDatePicker({ 
+					selector:'#uiDatePicker2',
+					weekDay: new Array('日', '月', '火', '水', '木', '金', '土'),
+					dual:true
+				});
+
+				$plugins.uiDatePicker({ 
+					selector:'#uiDatePicker3',
+					period : true,
+					dual  : false,
+					title: '여행기간 선택',
+					callback: function(v) {
+						console.log('callback: ', v);
+					}
+				});
+				$plugins.uiDatePicker({ 
+					selector:'#uiDatePicker4',
+					period : true,
+					dual : true,
+					title: '여행기간 선택',
+					callback: function(v) {
+						console.log('callback: ', v);
+					}
+				});
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

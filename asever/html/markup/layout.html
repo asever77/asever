@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png">
+    <link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico">
+
+    <title>Netive UI</title>
+
+    <link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+    <script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="/vanilla/resources/js/ui.base.js"></script>
+    <style>
+        .fx-wrap,
+        .fl-wrap,
+        .in-wrap {
+            border: 1px solid #222;
+            background: #f1f1f1;
+        }
+
+        .in-item,
+        [class*="fx-item"],
+        .fl-item-r,
+        .fl-item-l {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .test-flex1 [class*="fx-item"]:nth-child(1) {
+            min-height: 90px;
+            padding-top: 15px
+        }
+
+        .test-flex1 [class*="fx-item"]:nth-child(2) {
+            min-height: 60px;
+        }
+
+        .test-flex1 [class*="fx-item"]:nth-child(3) {
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body class="page-typography">
+    <div class="base-skip" id="baseSkip"></div>
+    <div class="base-layer" id="baseLayer"></div>
+    <div class="base-wrap" id="baseWrap">
+        <header class="base-header" id="baseHeader"></header>
+        <div class="base-body" id="baseBody">
+            <aside class="base-aside" id="baseAside"></aside>
+            <main class="base-main" id="baseMain" role="main">
+                <div class="tit-wrap">
+                    <h1 class="h1" id="uiPageTit">Margin</h1>
+                </div>
+
+                <h2 class="h2">inline-block Layout</h2>
+
+                <p>inline-block으로 레이아웃 구성 시 기본으로 생기는 여백을 .in-wrap 에서 font-size:0 으로 해결한다.<br>
+                    .in-item에서는 필수로 font-size를 재정의를 해줘야한다.
+                </p>
+
+                <div class="in-wrap">
+                    <div class="in-item col-xs txt-c">A</div>
+                    <div class="in-item col-s txt-c">B</div>
+                    <div class="in-item col-m txt-c">C</div>
+                </div>
+                <div class="in-wrap txt-c">
+                    <div class="in-item col-xs txt-c">A</div>
+                    <div class="in-item col-s txt-c">B</div>
+                    <div class="in-item col-m txt-c">C</div>
+                </div>
+                <div class="in-wrap txt-r">
+                    <div class="in-item col-m txt-c">A</div>
+                    <div class="in-item col-s txt-c">B</div>
+                    <div class="in-item col-s txt-c">C</div>
+                </div>
+                <div class="box-code">
+                    <pre>
+<code>
+&lt;div class="in-wrap"&gt;
+    &lt;div class="in-item"&gt;...&lt;/div&gt;
+    &lt;div class="in-item"&gt;...&lt;/div&gt;
+    &lt;div class="in-item"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+                </div>
+                <h2 class="h2">float Layout</h2>
+
+                <p>float으로 레이아웃 구성 시 부모가 자식의 높이값을 못가져오는 현상은 :after로 해결한다.</p>
+
+                <div class="fl-wrap">
+                    <div class="fl-item-l col-xs txt-c">A</div>
+                    <div class="fl-item-l col-s txt-c">B</div>
+                    <div class="fl-item-r col-m txt-c">C</div>
+                </div>
+
+                <div class="box-code">
+                    <pre>
+<code>
+&lt;div class="fl-wrap"&gt;
+    &lt;div class="fl-item-l"&gt;...&lt;/div&gt;
+    &lt;div class="fl-item-l"&gt;...&lt;/div&gt;
+    &lt;div class="fl-item-r"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+                </div>
+                <h2 class="h2">flex Layout</h2>
+
+                <p>안드로이드 2.1~4.3 브라우저와 IE 10 브라우저가 공통으로 지원하지 않는 속성은 flex-flow, justify-content: space-around,
+                    align-self, align-content 입니다.</p>
+
+                <h3 class="h3">아이템의 확장 지수 설정</h3>
+                <p>class="fx-item-n"</p>
+                <div class="fx-wrap fx-dir-row">
+                    <div class="fx-item-1 txt-c">A</div>
+                    <div class="fx-item-2 txt-c">B</div>
+                    <div class="fx-item-1 txt-c">C</div>
+                </div>
+
+                <h3 class="h3">정렬 순서 설정</h3>
+                <p>class="fx-order-n"</p>
+                <div class="fx-wrap fx-dir-row">
+                    <div class="fx-item-1 fx-order-2 txt-c">A</div>
+                    <div class="fx-item-2 fx-order-3 txt-c">B</div>
+                    <div class="fx-item-1 fx-order-1 txt-c">C</div>
+                </div>
+
+                <h3 class="h3">방향 설정</h3>
+                <p>class="fx-dir-row"</p>
+                <div class="fx-wrap fx-dir-row">
+                    <div class="fx-item-1 txt-c">A</div>
+                    <div class="fx-item-2 txt-c">B</div>
+                    <div class="fx-item-1 txt-c">C</div>
+                </div>
+                <p>class="fx-dir-rev"</p>
+                <div class="fx-wrap fx-dir-rev">
+                    <div class="fx-item-1 txt-c">A</div>
+                    <div class="fx-item-2 txt-c">B</div>
+                    <div class="fx-item-1 txt-c">C</div>
+                </div>
+                <p>class="fx-dir-col"</p>
+                <div class="fx-wrap fx-dir-col">
+                    <div class="fx-item-1 txt-c">A</div>
+                    <div class="fx-item-2 txt-c">B</div>
+                    <div class="fx-item-1 txt-c">C</div>
+                </div>
+                <p>class="fx-dir-revcol"</p>
+                <div class="fx-wrap fx-dir-revcol">
+                    <div class="fx-item-1 txt-c">A</div>
+                    <div class="fx-item-2 txt-c">B</div>
+                    <div class="fx-item-1 txt-c">C</div>
+                </div>
+
+                <h3 class="h3">X축 정렬 설정</h3>
+                <p>class="fx-align-start"</p>
+                <div class="fx-wrap fx-align-start">
+                    <div class="fx-item-0 txt-c">A</div>
+                    <div class="fx-item-0 txt-c">B</div>
+                    <div class="fx-item-0 txt-c">C</div>
+                </div>
+                <p>class="fx-align-end"</p>
+                <div class="fx-wrap fx-align-end">
+                    <div class="fx-item-0 txt-c">A</div>
+                    <div class="fx-item-0 txt-c">B</div>
+                    <div class="fx-item-0 txt-c">C</div>
+                </div>
+                <p>class="fx-align-center"</p>
+                <div class="fx-wrap fx-align-center">
+                    <div class="fx-item-0 txt-c">A</div>
+                    <div class="fx-item-0 txt-c">B</div>
+                    <div class="fx-item-0 txt-c">C</div>
+                </div>
+                <p>class="fx-align-justify"</p>
+                <div class="fx-wrap fx-align-justify">
+                    <div class="fx-item-0 txt-c">A</div>
+                    <div class="fx-item-0 txt-c">B</div>
+                    <div class="fx-item-0 txt-c">C</div>
+                </div>
+
+                <div class="test-flex1">
+                    <h3 class="h3">y축 정렬 설정</h3>
+                    <p>class="fx-valign-start"</p>
+                    <div class="fx-wrap fx-valign-start">
+                        <div class="fx-item-0 txt-c">A</div>
+                        <div class="fx-item-0 txt-c">B</div>
+                        <div class="fx-item-0 txt-c">C</div>
+                    </div>
+                    <p>class="fx-valign-end"</p>
+                    <div class="fx-wrap fx-valign-end">
+                        <div class="fx-item-0 txt-c">A</div>
+                        <div class="fx-item-0 txt-c">B</div>
+                        <div class="fx-item-0 txt-c">C</div>
+                    </div>
+                    <p>class="fx-valign-center"</p>
+                    <div class="fx-wrap fx-valign-center">
+                        <div class="fx-item-0 txt-c">A</div>
+                        <div class="fx-item-0 txt-c">B</div>
+                        <div class="fx-item-0 txt-c">C</div>
+                    </div>
+                    <p>class="fx-valign-stretch"</p>
+                    <div class="fx-wrap fx-valign-stretch">
+                        <div class="fx-item-0 txt-c">A</div>
+                        <div class="fx-item-0 txt-c">B</div>
+                        <div class="fx-item-0 txt-c">C</div>
+                    </div>
+                    <p>class="fx-valign-baseline"</p>
+                    <div class="fx-wrap fx-valign-baseline">
+                        <div class="fx-item-0 txt-c">A</div>
+                        <div class="fx-item-0 txt-c">B</div>
+                        <div class="fx-item-0 txt-c">C</div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+        <footer class="base-footer" id="baseFooter"></footer>
+    </div>
+
+    <!-- only page script -->
+    <script>
+        ; (function ($, win, doc, undefined) {
+            console.log('page ready before')
+            $plugins.common.pageid = 'G_02_07_00_00';
+
+            $(doc).ready(function () {
+
+                console.log('page ready after')
+
+            });
+        })(jQuery, window, document);
+    </script>
+
+</body>
+
+</html>

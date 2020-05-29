@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+	<style>
+		.ui-tab-btns{overflow-x:auto}
+		.ui-tab-btns .ui-tab-btn{width:200px}
+
+		.box-base.aa{background:url(/vanilla/resources/img/dummy/@pattern.png) repeat 0 0; height:50vw}
+	</style>
+</head>
+
+<body class="page-scroll">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">scroll move</h1>
+				</div>
+				<p class="txt-s2">특정위치로 스크롤 이동 시 사용</p>
+				
+				<h2 class="h2">Examples</h2>
+				<div class="ui-tab tab-scroll" id="exeTab4">
+					<div class="ui-tab-btns">
+						<div class="tab-scroll-wrap">
+							<button type="button" class="ui-tab-btn"><i>주유/정비</i></button>
+							<button type="button" class="ui-tab-btn"><i>외식</i></button>
+							<button type="button" class="ui-tab-btn"><i>편의/쇼핑</i></button>
+							<button type="button" class="ui-tab-btn"><i>영화/도서</i></button>
+							<button type="button" class="ui-tab-btn"><i>보험/금융</i></button>
+							<button type="button" class="ui-tab-btn"><i>게임</i></button>
+							<button type="button" class="ui-tab-btn"><i>문화</i></button>
+							<button type="button" class="ui-tab-btn"><i>여행</i></button>
+						</div>
+					</div>
+					<div class="ui-tab-pnls">
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">주유/정비</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">외식</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">편의/쇼핑</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">영화/도서</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">보험/금융</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">게임</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">문화</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">여행</h1></section>
+					</div>
+				</div>
+				
+				<div class="btn-wrap">
+					<button type="button" class="btn-base" id="uiScrollLeft"><span>6번탭으로 이동</span></button>
+				</div>
+				<div class="box-base aa">
+					<div class="btn-wrap" style="width:auto; position:fixed; top:50%; left:50%; z-index: 1000; padding:10px; background:rgba(0,0,0,0.3)">
+						<button type="button" class="btn-base" id="scrolltop"><span>상단</span></button>
+						<button type="button" class="btn-base" id="scrolltop3"><span>중단</span></button>
+						<button type="button" class="btn-base" id="scrolltop2"><span>하단</span></button>
+					</div>
+				</div>
+
+				<h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+//탭 가로스크롤
+&lt;div class="ui-tab tab-scroll" id="exeTab4"&gt;
+	&lt;div class="ui-tab-btns"&gt;
+		&lt;div class="tab-scroll-wrap"&gt;
+			&lt;button type="button" class="ui-tab-btn"&gt;&lt;i&gt;탭버튼 1&lt;/i&gt;&lt;/button&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="ui-tab-pnls"&gt;
+		&lt;section class="ui-tab-pnl"&gt;&lt;h1 class="ui-tab-tit"&gt;콘텐츠 1&lt;/h1&gt;&lt;/section&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiScroll</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiScroll</span>({ <span class="s">
+	value:0, 
+	target:'html,body',
+	speed:300, 
+	ps:'top', 
+	focus:'baseHeader', 
+	callback:function(v){console.log(v)}</span> 
+});
+</code>
+</pre>
+</div>	
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">value:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>스크롤이 갈 위치값</td>
+						</tr>
+						<tr>
+							<th scope="row">target:</th>
+							<td>[string]</td>
+							<td>'html, body'</td>
+							<td>스크롤 영역으로 해당 아이디명 기입. 기본으로 html,body로 설정됨</td>
+						</tr>
+						<tr>
+							<th scope="row">ps:</th>
+							<td>[string]</td>
+							<td>'top'</td>
+							<td>스크롤 방향
+								<ul>
+								<li>'top' : 상하 이동 </li>
+								<li>'left' : 좌우 이동 </li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">speed:</th>
+							<td>[number]</td>
+							<td>300</td>
+							<td>스크롤속도</td>
+						</tr>
+						<tr>
+							<th scope="row">focus:</th>
+							<td>[string]</td>
+							<td>false</td>
+							<td>스크롤 완료 후 포커스 갈 위치의 아이디명</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td></td>
+							<td>
+								<ul>
+								<li>이동 시 : 스크롤 좌표값, complete = false </li>
+								<li>완료 시 : 이동할 포커스 아이디명, complete = true </li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_15_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after');
+
+				$plugins.uiTab({ id:'exeTab4', current:6 });
+
+				$('#scrolltop').on('click', function(){
+					$plugins.uiScroll({ value:0, speed:300, focus:'baseHeader', callback:callback });
+				});
+				
+				$('#scrolltop2').on('click', function(){
+					$plugins.uiScroll({ value:$(doc).outerHeight(), speed:300, callback:callback });
+				});
+				
+				$('#scrolltop3').on('click', function(){
+					console.log($(win).outerHeight(), $(doc).outerHeight())
+					$plugins.uiScroll({ value: ($(doc).outerHeight() / 2) - ($(win).outerHeight() / 2), speed:300, callback:callback });
+				});
+
+				$('#uiScrollLeft').on('click', function(){
+					$plugins.uiScroll({ 
+						value:$('.tab-scroll-wrap button').eq(5).position().left, 
+						target:$('#exeTab4 .ui-tab-btns'), 
+						speed:300, 
+						focus:$('#exeTab4 .tab-scroll-wrap button').eq(5), 
+						callback:callback, 
+						ps:'left' 
+					});
+				});
+				
+				function callback(v){
+					console.log(v);
+				}
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

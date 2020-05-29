@@ -1,0 +1,25 @@
+<section class="ui-modal-simple" id="modal_sample5" role="dialog" aria-hidden="true">
+    <div class="ui-modal-wrap">
+        <header class="ui-modal-head">
+            <h1 class="ui-modal-tit">top modal</h1>
+            <button type="button" class="btn-close" aria-label="close" onclick="$plugins.uiModalClose({ id:'modal_sample5', remove:true, callback:function(v){ console.log(v); } });">닫기</button>
+        </header>
+        <div class="ui-modal-cont">
+            
+        </div>
+    
+    </div>
+</section>
+
+<script>
+    ;(function($, win, doc, undefined) {
+        $(doc).ready(function(){
+            
+            setTimeout(function(){
+                $('#modal_sample5 .ui-modal-cont').append('<div style="width:100%; background:black; height:1500px;">ddd</div>');
+                $('#modal_sample5 .ui-modal-wrap').css('height','100%');
+            },1000);
+
+        });
+    })(jQuery, window, document);
+</script>

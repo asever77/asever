@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body>
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">file upload</h1>
+				</div>
+				<p class="txt-s2">*멀티 파일업로드 작업 필요</p>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">base type</h3>
+				<div class="btn-wrap txt-l">
+					<form>
+						<div class="ui-file btn-base" id="addfileWrap">
+							<input type="file" class="ui-file-inp" id="addfileInp" multiple>
+							<span>파일선택</span>
+						</div>
+						<div class="ui-file-list" aria-labelledby="addfileInp" style="min-height:43px">
+
+						</div>
+
+						<div class="ui-file btn-base" id="addfileWrap2">
+							<input type="file" class="ui-file-inp" id="addfileInp2" multiple>
+							<span>파일선택</span>
+						</div>
+						<div class="ui-file-list" aria-labelledby="addfileInp2" style="min-height:43px">
+
+						</div>
+					</form>
+				</div>
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div class="ui-file btn-base" id="addfileWrap"&gt;
+	&lt;input type="file" class="ui-file-inp" id="addfileInp" multiple&gt;
+	&lt;span&gt;파일선택&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-file-list" aria-labelledby="addfileInp"&gt;
+	...
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiFileUpload</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiFileUpload</span>();
+</code>
+</pre>
+</div>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_07_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+
+				$plugins.uiFileUpload(); 
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

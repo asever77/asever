@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-count">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">카운트넘버</h1>
+					<em>2020-01-02 수정 : step count </em>
+				</div>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">Step Count</h3>
+				','콤마를 자동 생성합니다.</p>
+				<div class="box-base">
+					<div class="ui-count" id="exeCount1" style="font-size:5.0rem; color:#000; text-align:right; width:100%">504025.012</div>
+				</div>
+				<div class="btn-wrap txt-l">
+					<button type="button" class="btn-base" onclick="$plugins.uiCountStep({ id:'exeCount1', value: 10245879.234 });">10245879 재실행</button>
+				</div>
+
+				<h3 class="h3">Slide Count</h3>
+				<div class="box-base">
+					<div class="ui-count" id="exeCount2" style="font-size:5.0rem; color:#000; text-align:right; width:100%"">5040.25</div>
+				</div>
+				<div class="btn-wrap txt-l">
+					<button type="button" class="btn-base" onclick="$plugins.uiCountSlide({ id:'exeCount2', value: 5040.25 });">재실행</button>
+				</div>
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div class="ui-count" id="exeCount1"&gt;504025&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiCountStep</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins.uiCountStep({ 
+	id:'exeCount1', 
+	value: 504025 
+});
+</code>
+</pre>
+</div>
+
+				<h3 class="h3">$plugins.uiCountSlide</h3>
+				
+					
+				
+<div class="box-code">
+<pre>
+<code>
+$plugins.uiCountSlide({ 
+	id:'exeCount2', 
+	value: 5040.25 
+});
+</code>
+</pre>
+</div>
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_04_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiCountStep({ id:'exeCount1', value: 504025 });
+       			$plugins.uiCountSlide({ id:'exeCount2', value: 5040.25 });
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

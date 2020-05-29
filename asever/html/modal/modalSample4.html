@@ -1,0 +1,35 @@
+<section class="ui-modal" id="modal_sample4" role="dialog" aria-hidden="true">
+    <div class="ui-modal-wrap">
+        <header class="ui-modal-header">
+            <h1 class="ui-modal-tit">top modal</h1>
+        </header>
+        <div class="ui-modal-cont">
+            <p>기본적인 모달 레이어 팝업</p>
+            <p>width, height 값은 콘텐츠 내용에 따라 자동으로 설정</p>
+            <p>특정 크기 값을 줄수도 있음.</p>
+        </div>
+        <div class="ui-modal-footer">
+            <button type="button" class="btn-base" onclick="$plugins.uiModalClose({ id:'modal_sample4', remove:true, callback:function(v){ console.log(v); } });">확인</button>
+        </div>
+        <button type="button" class="btn-close" aria-label="close" onclick="$plugins.uiModalClose({ id:'modal_sample4', remove:true, callback:function(v){ console.log(v); } });">닫기</button>
+    </div>
+</section>
+
+<script>
+    ;(function($, win, doc, undefined) {
+        $(doc).ready(function(){
+            $('#modal_sample4 .ui-modal-cont').append('<div style="width:100%; background:black; height:1500px;">ddd</div>');
+            setTimeout(function(){
+                $plugins.uiModal({ id:
+                    'modal_sample4', 
+                    remove:true, 
+                    mpage: true,
+                    openback: function() { console.log('open callback3'); },
+                    closeback: function(v) { console.log('close callback3', v); },
+                    open:true 
+                });
+            },1000);
+
+        });
+    })(jQuery, window, document);
+</script>

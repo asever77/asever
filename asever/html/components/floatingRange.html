@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-floating">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Floating Range</h1>
+				</div>
+				<p class="txt-s2">특정 범위안에서만 스크롤 이동에 따라 이동하는 오브젝트</p>
+
+				<h2 class="h2">Examples</h2>
+				<div class="ui-floating-range" id="uiflRange01" style="display:inline-block; vertical-align: middle; height:500px; width:300px; border:1px dashed #ccc; ">
+					<div class="ui-floating-range-item">
+						<div class="tst-obj">특정 영역 안에서만 이동</div>
+					</div>
+				</div>
+				<div class="ui-floating-range" id="uiflRange02" style="display:inline-block;vertical-align: middle; height:300px; width:200px; border:1px dashed #ccc; margin-left:30px;">
+					<div class="ui-floating-range-item">
+						<div class="tst-obj">특정 영역 안에서만 이동</div>
+					</div>
+				</div>
+				
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"ui-floating-range"</span> <span class="na">id=</span><span class="s">"uiflRange01"</span>&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-floating-range-item"</span>&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiFloatingRange</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins.uiFloatingRange({ 
+	id:'uiflRange01', 
+	add:'baseHeader',
+	margin: 20
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option" style="margin-bottom:100px">
+				<caption>옵션 설명</caption>
+				<colgroup>
+					<col class="n1">
+					<col class="n2">
+					<col class="n3">
+					<col class="n4">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">옵션명</th>
+						<th scope="col">유형</th>
+						<th scope="col">기본</th>
+						<th scope="col">설명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nec">
+						<th scope="row">id:</th>
+						<td>[string]</td>
+						<td>'name'</td>
+						<td>(필수) fix follow를 적용 시킬 영역(ui-floating)의 id 명</td>
+					</tr>
+					<tr>
+						<th scope="row">add:</th>
+						<td>[string]</td>
+						<td>'name'</td>
+						<td>고정되어 있는 오브젝트가 이미 있다면 그위치 다음으로 위치하기 위해 해당 영역의 아이디명 </td>
+					</tr>
+					<tr>
+						<th scope="row">margin:</th>
+						<td>[number]</td>
+						<td>0</td>
+						<td>오브젝트 상단영역 마진값 추가로 이동시점 변경</td>
+					</tr>
+				</tbody>
+				</table>
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_24_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiFloatingRange({ 
+					id:'uiflRange01', 
+					add:'baseHeader' ,
+					margin: 20
+				});
+				$plugins.uiFloatingRange({ 
+					id:'uiflRange02', 
+					add:'baseHeader' ,
+					margin: 0
+				});
+				
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

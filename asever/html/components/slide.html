@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+
+	<style>
+	/* style */
+	.ui-slide-wrap,
+	.ui-slide-itemwrap,
+	.ui-slide-item{width:100%; height:300px;}
+	.ui-slide-item.n1{background:#fac2c2}
+	.ui-slide-item.n2{background:#dcc2fa}
+	.ui-slide-item.n3{background:#c2f5fa}
+	.ui-slide-item.n4{background:#dafac2}
+	.ui-slide-item.n5{background:#fac2c2}
+	.ui-slide-item.n6{background:#dcc2fa}
+	.ui-slide-item.n7{background:#c2f5fa}
+	.ui-slide-item.n8{background:#dafac2}
+	
+	.ui-slide-multi .ui-slide-item.n1{width:200px}
+	.ui-slide-multi .ui-slide-item.n2{width:100px}
+	.ui-slide-multi .ui-slide-item.n3{width:300px}
+	.ui-slide-multi .ui-slide-item.n4{width:80px}
+	.ui-slide-multi .ui-slide-item.n5{width:150px}
+	.ui-slide-multi .ui-slide-item.n6{width:200px}
+	.ui-slide-multi .ui-slide-item.n7{width:300px}
+	.ui-slide-multi .ui-slide-item.n8{width:200px}
+	</style>
+</head>
+
+<body class="page-slide">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit"></h1>
+				</div>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">slide eff</h3>
+					
+				<section class="ui-slide" id="slide1">
+					<h1 class="ui-slide-tit">slide 제목</h1>
+					<div class="ui-slide-wrap">
+						<div class="ui-slide-itemwrap">
+							<div class="ui-slide-item n1">
+								<h2 class="ui-slide-itemtit">아이템 제목 1</h2>
+								<p>item 1</p>
+							</div>
+							<div class="ui-slide-item n2" style="height:500px">
+								<h2 class="ui-slide-itemtit">아이템 제목 2</h2>
+								<p>item 2</p>
+							</div>
+							
+							<div class="ui-slide-item n3">
+								<h2 class="ui-slide-itemtit">아이템 제목 3</h2>
+								<p>item 3</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<h3 class="h3">fade eff</h3>
+				<section class="ui-slide" id="slide2">
+					<h1 class="ui-slide-tit">slide 제목</h1>
+					<div class="ui-slide-wrap">
+						<div class="ui-slide-itemwrap">
+							<div class="ui-slide-item n1">
+								<h2 class="ui-slide-itemtit">아이템 제목 1</h2>
+								<p>item 1</p>
+							</div>
+							
+							<div class="ui-slide-item n2">
+								<h2 class="ui-slide-itemtit">아이템 제목 2</h2>
+								<p>item 2</p>
+							</div>
+							
+							<div class="ui-slide-item n3">
+								<h2 class="ui-slide-itemtit">아이템 제목 3</h2>
+								<p>item 3</p>
+							</div>
+							
+							<div class="ui-slide-item n4">
+								<h2 class="ui-slide-itemtit">아이템 제목 4</h2>
+								<p>item 4</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;section <span class="na">class=</span><span class="s">"ui-slide"</span> <span class="na">id=</span><span class="s">"slide1"</span>&gt;
+	&lt;h1 <span class="na">class=</span><span class="s">"ui-slide-tit"</span>&gt;slide 제목&lt;/h1&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-slide-wrap"</span>&gt;
+		&lt;div <span class="na">class=</span><span class="s">"ui-slide-itemwrap"</span>&gt;
+			&lt;div <span class="na">class=</span><span class="s">"ui-slide-item"</span>&gt;
+				&lt;h2 <span class="na">class=</span><span class="s">"ui-slide-itemtit"</span>&gt;아이템 제목 1&lt;/h2&gt;
+				&lt;p&gt;item 1&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+</div>
+
+				
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiSlide</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiSlide</span>({ <span class="s">
+	id:'name', 
+	current:0, 
+	eff:'slide', 
+	speed:300, 
+	dot:true, 
+	nav:true, 
+	auto:true, 
+	gauge:true, 
+	play:false, 
+	autoTime:3000, 
+	mouseDrag:true, 
+	touchDrag:true,
+	loop:true, 
+	items:1, 
+	ulti:false, 
+	margin:0</span> 
+});
+</code>
+</pre>
+</div>	
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-slide의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">current:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>처음 노출될 아이템 선택</td>
+						</tr>
+						<tr>
+							<th scope="row">eff:</th>
+							<td>[string]</td>
+							<td>'slide'</td>
+							<td>아이템 전환 효과
+								<ul>
+								<li>'slide': 슬라이드 효과</li>
+								<li>'fade': 페이드 효과</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">speed:</th>
+							<td>[number]</td>
+							<td>300</td>
+							<td>eff 속도</td>
+						</tr>
+						<tr>
+							<th scope="row">dot:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>dot navigation 노출여부</td>
+						</tr>
+						<tr>
+							<th scope="row">nav:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>next/prev button 노출여부</td>
+						</tr>
+						<tr>
+							<th scope="row">auto:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>자동진행 사용 여부</td>
+						</tr>
+						<tr>
+							<th scope="row">gauge:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>자동진행 시 게이지 노출여부</td>
+						</tr>
+						<tr>
+							<th scope="row">play:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>자동진행 시작 시 플레이 여부 선택</td>
+						</tr>
+						<tr>
+							<th scope="row">autoTime:</th>
+							<td>[number]</td>
+							<td>3000</td>
+							<td>자동진행 간격시간</td>
+						</tr>
+						<tr>
+							<th scope="row">mouseDrag:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>pc에서 마우스 드래그 사용여부</td>
+						</tr>
+						<tr>
+							<th scope="row">touchDrag:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>터치 드래그 사용여부</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 현재선택 index값</td>
+						</tr>
+						
+						
+						<tr class="un">
+							<th scope="row">loop:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>(미구현) 루프선택</td>
+						</tr>
+						<tr class="un">
+							<th scope="row">items:</th>
+							<td>[number]</td>
+							<td>1</td>
+							<td>(미구현) 보여줄 아이템 갯수</td>
+						</tr>
+						<tr class="un">
+							<th scope="row">multi:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>(미구현) 모든 아이템이 나열되어 보여줌</td>
+						</tr>
+						<tr class="un">
+							<th scope="row">margin:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>(미구현) multi 사용시 아이템간의 간격</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiSlideFnEvt</h3>
+				<p>지정된 아이템으로 전환</p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiSlideFnEvt</span>({ <span class="s">
+	id:'name', 
+	current:0</span> 
+});
+</code>
+</pre>
+</div>	
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-slide의 아이디명 기입</td>
+						</tr>
+						<tr class="nec">
+							<th scope="row">current:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>노출될 아이템 선택</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiSlideFnAuto</h3>
+				<p>자동진행 play/stop 컨트롤</p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiSlideFnAuto</span>({ <span class="s">
+	id:'name', 
+	play:false</span> 
+});
+</code>
+</pre>
+</div>	
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-slide의 아이디명 기입</td>
+						</tr>
+						<tr class="nec">
+							<th scope="row">current:</th>
+							<td>[boolean]</td>
+							<td></td>
+							<td>자동진행 play/stop
+								<ul>
+								<li>true: 자동진행 플레이</li>
+								<li>false: 자동진행 정지</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 class="h2">진행중</h2>
+				<h3 class="h3">multi, loop, items 기능 작업중</h3>
+				<div class="box-base">
+					<section class="ui-slide" id="slide3">
+						<h1 class="ui-slide-tit">slide 제목</h1>
+						<div class="ui-slide-wrap">
+							<div class="ui-slide-itemwrap">
+								<div class="ui-slide-item n1">
+									<h2 class="ui-slide-itemtit">아이템 제목 1</h2>
+									<p>item 1</p>
+								</div>
+								<div class="ui-slide-item n2">
+									<h2 class="ui-slide-itemtit">아이템 제목 2</h2>
+									<p>item 2</p>
+								</div>
+								<div class="ui-slide-item n3">
+									<h2 class="ui-slide-itemtit">아이템 제목 3</h2>
+									<p>item 3</p>
+								</div>
+								<div class="ui-slide-item n4">
+									<h2 class="ui-slide-itemtit">아이템 제목 4</h2>
+									<p>item 4</p>
+								</div>
+								<div class="ui-slide-item n5">
+									<h2 class="ui-slide-itemtit">아이템 제목 5</h2>
+									<p>item 1</p>
+								</div>
+								<div class="ui-slide-item n6">
+									<h2 class="ui-slide-itemtit">아이템 제목 6</h2>
+									<p>item 2</p>
+								</div>
+								<div class="ui-slide-item n7">
+									<h2 class="ui-slide-itemtit">아이템 제목 7</h2>
+									<p>item 3</p>
+								</div>
+								<div class="ui-slide-item n8">
+									<h2 class="ui-slide-itemtit">아이템 제목 8</h2>
+									<p>item 4</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+					<section class="ui-slide" id="slide4">
+						<h1 class="ui-slide-tit">slide 제목</h1>
+						<div class="ui-slide-wrap">
+							<div class="ui-slide-itemwrap">
+								<div class="ui-slide-item n1">
+									<h2 class="ui-slide-itemtit">아이템 제목 1</h2>
+									<p>item 1</p>
+								</div>
+								<div class="ui-slide-item n2">
+									<h2 class="ui-slide-itemtit">아이템 제목 2</h2>
+									<p>item 2</p>
+								</div>
+								<div class="ui-slide-item n3">
+									<h2 class="ui-slide-itemtit">아이템 제목 3</h2>
+									<p>item 3</p>
+								</div>
+								<div class="ui-slide-item n4">
+									<h2 class="ui-slide-itemtit">아이템 제목 4</h2>
+									<p>item 4</p>
+								</div>
+								<div class="ui-slide-item n5">
+									<h2 class="ui-slide-itemtit">아이템 제목 5</h2>
+									<p>item 1</p>
+								</div>
+								<div class="ui-slide-item n6">
+									<h2 class="ui-slide-itemtit">아이템 제목 6</h2>
+									<p>item 2</p>
+								</div>
+								<div class="ui-slide-item n7">
+									<h2 class="ui-slide-itemtit">아이템 제목 7</h2>
+									<p>item 3</p>
+								</div>
+								<div class="ui-slide-item n8">
+									<h2 class="ui-slide-itemtit">아이템 제목 8</h2>
+									<p>item 4</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_18_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.page.slide();
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

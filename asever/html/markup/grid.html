@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-grid">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+					
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">그리드</h1>
+				</div>
+
+				<h2 class="h2">iOS Device Display Summary</h2>
+				<div class="tbl-scroll ui-tblscroll tbl-grid01">
+					<div class="tbl-scroll-tbody">
+						<table class="tbl-base type-option txt-l">
+							<caption>IOS Screen Geometry</caption>
+							<colgroup>
+								<col class="col-n1">
+								<col class="col-n2">
+								<col class="col-n3">
+								<col class="col-n4">
+								<col class="col-n5">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="TableHeading_TableRow_TableCell">
+										<p>Device</p>
+									</th>
+									<th scope="col" class="TableHeading_TableRow_TableCell">
+										<p>Native Resolution (Pixels)</p>
+									</th>
+									<th scope="col" class="TableHeading_TableRow_TableCell">
+										<p>UIKit Size (Points)</p>
+									</th>
+									<th scope="col" class="TableHeading_TableRow_TableCell">
+										<p>Native Scale factor</p>
+									</th>
+									<th scope="col" class="TableHeading_TableRow_TableCell">
+										<p>UIKit Scale factor</p>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row">
+										<p>iPhone X</p>
+									</td>
+									<td>
+										<p>1125 x 2436</p>
+									</td>
+									<td>
+										<p>375 x 812</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 8 Plus</p>
+									</td>
+									<td>
+										<p>1080 x 1920</p>
+									</td>
+									<td>
+										<p>414 x 736</p>
+									</td>
+									<td>
+										<p>2.608</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 8</p>
+									</td>
+									<td>
+										<p>750 x 1334</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 7 Plus</p>
+									</td>
+									<td>
+										<p>1080 x 1920</p>
+									</td>
+									<td>
+										<p>414 x 736</p>
+									</td>
+									<td>
+										<p>2.608</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 6s Plus</p>
+									</td>
+									<td>
+										<p>1080 x 1920</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.608</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 6 Plus</p>
+									</td>
+									<td>
+										<p>1080 x 1920</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.608</p>
+									</td>
+									<td>
+										<p>3.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 7</p>
+									</td>
+									<td>
+										<p>750 x 1334</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 6s</p>
+									</td>
+									<td>
+										<p>750 x 1334</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone 6</p>
+									</td>
+									<td>
+										<p>750 x 1334</p>
+									</td>
+									<td>
+										<p>375 x 667</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPhone SE</p>
+									</td>
+									<td>
+										<p>640 x 1136</p>
+									</td>
+									<td>
+										<p>320 x 568</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Pro 12.9-inch (2nd generation)</p>
+									</td>
+									<td>
+										<p>2048 x 2732</p>
+									</td>
+									<td>
+										<p>1024 x 1366</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Pro 10.5-inch</p>
+									</td>
+									<td>
+										<p>2224 x 1668</p>
+									</td>
+									<td>
+										<p>1112 x 834</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Pro (12.9-inch)</p>
+									</td>
+									<td>
+										<p>2048 x 2732</p>
+									</td>
+									<td>
+										<p>1024 x 1366</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Pro (9.7-inch)</p>
+									</td>
+									<td>
+										<p>1536 x 2048</p>
+									</td>
+									<td>
+										<p>768 x 1024</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Air 2</p>
+									</td>
+									<td>
+										<p>1536 x 2048</p>
+									</td>
+									<td>
+										<p>768 x 1024</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<p>iPad Mini 4</p>
+									</td>
+									<td>
+										<p>1536 x 2048</p>
+									</td>
+									<td>
+										<p>768 x 1024</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+									<td>
+										<p>2.0</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h2 class="h2">Breakpoint 기준</h2>
+				<p>최적의 환경을 구성하기 위해 breakpoint를 디바이스의 해상도에 따라 12가지로 나눈다. 그중에 600을 기준으로 4, 8 열로 960기준으로 8, 12열로 나누어진다.</p>
+				<ul class="bul-hyphen">
+					<li>12 columns : 960 ~</li>
+					<li>8 columns : 600 ~ 959</li>
+					<li>4 columns : 320 ~ 599</li>
+				</ul>
+				<table class="tbl-base type-option txt-l">
+					<caption>breakpoint</caption>
+					<thead>
+						<tr>
+							<th colspan="1" rowspan="1">
+								<p>Breakpoint Range (dp)</p>
+							</th>
+							<th colspan="1" rowspan="1">
+								<p>Portrait</p>
+							</th>
+							<th colspan="1" rowspan="1">
+								<p>Landscape</p>
+							</th>
+							<th colspan="1" rowspan="1">
+								<p>Window</p>
+							</th>
+							<th colspan="1" rowspan="1">
+								<p>Columns</p>
+							</th>
+							<th colspan="1" rowspan="1">
+								<p>Margins / Gutters*</p>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>0 – 359</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>xsmall</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>4</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>360 – 399</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>medium handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>xsmall</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>4</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>400 – 479</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>xsmall</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>4</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>480 – 599</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>xsmall</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>4</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+					</tbody>
+					<tbody class="tbl-tbody">
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>600 – 719</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>medium handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>8</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>720 – 839</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>8</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>840 – 959</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large handset</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>8</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>16</p>
+							</td>
+						</tr>
+					</tbody>
+					<tbody class="tbl-tbody">
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>960 – 1023</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>small</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>1024 – 1279</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>medium</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>1280 – 1439</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large tablet</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>medium</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>1440 – 1599</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>1600 – 1919</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>large</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<p>1920 +</p>
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>xlarge</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>12</p>
+							</td>
+							<td colspan="1" rowspan="1">
+								<p>24</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h2 class="h2">Base Grid</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"grid-wrap"</span>&gt;
+	&lt;div <span class="na">class=</span><span class="s">"grid-col"</span> <span class="na">grid=</span><span class="s">"1-1-1"</span>&gt;
+	....
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h3 class="h3"><span class="coln12">12-Columns(1080기준-90)</span><span class="coln8">8-Columns</span><span class="coln4">4-Columns</span></h3>
+				<p>1080기준으로 12col은 1080px크기로 1col의 기본 크기는 92px 기준 </p>
+				<div class="grid-wrap mgt-s">
+					<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+					<div class="grid-col" grid="2-2-1"><b>2</b><b>2</b><b>1</b></div>
+					<div class="grid-col" grid="3-3-1"><b>3</b><b>3</b><b>1</b></div>
+					<div class="grid-col" grid="4-2-1"><b>4</b><b>2</b><b>1</b></div>
+					<div class="grid-col" grid="2-4-2"><b>2</b><b>4</b><b>2</b></div>
+					<div class="grid-col" grid="5-4-2"><b>5</b><b>4</b><b>2</b></div>
+					<div class="grid-col" grid="6-5-2"><b>6</b><b>5</b><b>2</b></div>
+					<div class="grid-col" grid="1-2-2"><b>1</b><b>2</b><b>2</b></div>
+					<div class="grid-col" grid="7-1-3"><b>7</b><b>1</b><b>3</b></div>
+					<div class="grid-col" grid="5-6-1"><b>5</b><b>6</b><b>1</b></div>
+					<div class="grid-col" grid="8-2-1"><b>8</b><b>2</b><b>1</b></div>
+					<div class="grid-col" grid="4-7-3"><b>4</b><b>7</b><b>3</b></div>
+					<div class="grid-col" grid="9-1-4"><b>9</b><b>1</b><b>4</b></div>
+					<div class="grid-col" grid="3-8-4"><b>3</b><b>8</b><b>4</b></div>
+					<div class="grid-col" grid="10-2-1"><b>10</b><b>2</b><b>1</b></div>
+					<div class="grid-col" grid="1-4-2"><b>1</b><b>4</b><b>2</b></div>
+					<div class="grid-col" grid="1-2-1"><b>1</b><b>2</b><b>1</b></div>
+					<div class="grid-col" grid="11-1-2"><b>11</b><b>1</b><b>2</b></div>
+					<div class="grid-col" grid="1-6-1"><b>1</b><b>6</b><b>1</b></div>
+					<div class="grid-col" grid="12-1-1"><b>12</b><b>1</b><b>1</b></div>
+				</div>
+			
+				<h2 class="h2">Inner Grid</h2>
+				<p>그리드 안의 그리드일 경우 아래와 같이 코딩한다.</p>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"grid-wrap"</span>&gt;
+	&lt;div <span class="na">class=</span><span class="s">"grid-col"</span> <span class="na">grid=</span><span class="s">"12-8-4"</span>&gt;
+		&lt;div <span class="na">class=</span><span class="s">"grid-row"</span>&gt;
+			&lt;div <span class="na">class=</span><span class="s">"grid-col"</span> <span class="na">grid=</span><span class="s">"6-4-2"</span>&gt;
+			&lt;div <span class="na">class=</span><span class="s">"grid-col"</span> <span class="na">grid=</span><span class="s">"6-4-2"</span>&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h3 class="h3"><span class="coln12">12</span><span class="coln8">8</span><span class="coln4">4</span>-Columns</h3>
+				<div class="grid-wrap">
+					<div class="grid-col" grid="2-1-1">
+						<div class="grid-row">
+							<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="10-7-3">
+						<div class="grid-row">
+							<div class="grid-col" grid="1-2-1"><b>1</b><b>2</b><b>1</b></div>
+							<div class="grid-col" grid="9-3-2"><b>9</b><b>3</b><b>2</b></div>
+							<div class="grid-col" grid="2-2-1"><b>2</b><b>2</b><b>1</b></div>
+							<div class="grid-col" grid="8-6-3"><b>8</b><b>6</b><b>3</b></div>
+							<div class="grid-col" grid="3-3-1"><b>3</b><b>3</b><b>1</b></div>
+							<div class="grid-col" grid="7-4-2"><b>7</b><b>4</b><b>2</b></div>
+							<div class="grid-col" grid="4-6-2"><b>4</b><b>6</b><b>2</b></div>
+							<div class="grid-col" grid="6-1-4"><b>6</b><b>1</b><b>4</b></div>
+							<div class="grid-col" grid="10-7-4"><b>10</b><b>7</b><b>4</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="3-2-2">
+						<div class="grid-row">
+							<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="2-1-1"><b>2</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="3-2-2"><b>3</b><b>2</b><b>2</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="9-6-2">
+						<div class="grid-row">
+							<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="8-2-2"><b>9</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="2-3-2"><b>2</b><b>3</b><b>2</b></div>
+							<div class="grid-col" grid="7-4-2"><b>7</b><b>4</b><b>2</b></div>
+							<div class="grid-col" grid="3-5-2"><b>3</b><b>5</b><b>2</b></div>
+							<div class="grid-col" grid="6-1-1"><b>6</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="4-6-2"><b>4</b><b>6</b><b>2</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="4-3-4">
+						<div class="grid-row">
+							<div class="grid-col" grid="2-1-2"><b>2</b><b>1</b><b>2</b></div>
+							<div class="grid-col" grid="2-2-2"><b>2</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="4-3-4"><b>4</b><b>3</b><b>4</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="8-5-4">
+						<div class="grid-row">
+							<div class="grid-col" grid="2-1-1"><b>2</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="6-4-1"><b>6</b><b>4</b><b>1</b></div>
+							<div class="grid-col" grid="4-2-1"><b>4</b><b>2</b><b>1</b></div>
+							<div class="grid-col" grid="4-3-1"><b>4</b><b>3</b><b>1</b></div>
+							<div class="grid-col" grid="7-5-4"><b>7</b><b>5</b><b>4</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="5-4-4">
+						<div class="grid-row">
+							<div class="grid-col" grid="2-1-2"><b>2</b><b>1</b><b>2</b></div>
+							<div class="grid-col" grid="3-3-2"><b>3</b><b>3</b><b>2</b></div>
+							<div class="grid-col" grid="4-2-2"><b>4</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="1-2-2"><b>1</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="5-4-4"><b>5</b><b>4</b><b>4</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="7-4-4">
+						<div class="grid-row">
+							<div class="grid-col" grid="2-1-4"><b>2</b><b>1</b><b>4</b></div>
+							<div class="grid-col" grid="5-3-4"><b>5</b><b>3</b><b>4</b></div>
+							<div class="grid-col" grid="3-2-2"><b>3</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="4-2-2"><b>4</b><b>2</b><b>2</b></div>
+							<div class="grid-col" grid="1-4-4"><b>1</b><b>4</b><b>4</b></div>
+						</div>
+					</div>
+					<div class="grid-col" grid="6-8-4">
+						<div class="grid-row">
+							<div class="grid-col" grid="1-1-1"><b>1</b><b>1</b><b>1</b></div>
+							<div class="grid-col" grid="2-7-3"><b>2</b><b>7</b><b>3</b></div>
+							<div class="grid-col" grid="3-2-3"><b>3</b><b>2</b><b>3</b></div>
+							<div class="grid-col" grid="2-6-4"><b>2</b><b>6</b><b>4</b></div>
+							<div class="grid-col" grid="2-3-2"><b>2</b><b>3</b><b>2</b></div>
+							<div class="grid-col" grid="2-5-2"><b>2</b><b>5</b><b>2</b></div>
+							<div class="grid-col" grid="3-4-4"><b>3</b><b>4</b><b>4</b></div>
+							<div class="grid-col" grid="3-4-2"><b>3</b><b>4</b><b>2</b></div>
+							<div class="grid-col" grid="6-8-2"><b>6</b><b>8</b><b>2</b></div>
+						</div>
+					</div>
+				</div>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_02_03_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiTblScroll();
+				//$plugins.page.floating();
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

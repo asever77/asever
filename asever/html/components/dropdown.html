@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+
+	<style>
+	.test-w-300{width:300px}
+	</style>
+</head>
+
+<body class="page-dropdown">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer">
+		<section class="ui-drop-pnl" data-id="uiDrop1">
+			<div class="ui-drop-box">
+				<h1>제목</h1>
+				<p>abcdefg hijklmn opqrstu vwxyz</p>
+				<p>abcdefg hijklmn opqrstu vwxyz</p>
+				<p>abcdefg hijklmn opqrstu vwxyz</p>
+				<p>abcdefg hijklmn opqrstu vwxyz</p>
+				<p>abcdefg hijklmn opqrstu vwxyz</p>
+				<div class="ui-tab tab_page item3" id="exeTab1">
+					<div class="ui-tab-btns">
+						<button type="button" class="ui-tab-btn"><span><i>휴대폰인증</i></span></button>
+						<button type="button" class="ui-tab-btn"><span><i>공인인증</i></span></button>
+						<button type="button" class="ui-tab-btn"><span><i>카드인증</i></span></button>
+					</div>
+					<div class="ui-tab-pnls">
+						<section class="ui-tab-pnl">
+							<h3>휴대폰인증</h3>
+							<p>휴대폰인증 content</p>
+							<a href="#">더보기</a>
+						</section>
+						<section class="ui-tab-pnl">
+							<h3>공인인증</h3>
+							<p>공인인증 content</p>
+							<a href="#">더보기</a>
+						</section>
+						<section class="ui-tab-pnl">
+							<h3>카드인증</h3>
+							<p>카드인증 content</p>
+							<a href="#">더보기</a>
+						</section>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="ui-drop-close btn-close">닫기</button>
+		</section>
+	</div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Dropdown</h1>
+				</div>
+				<p class="txt-s2">Dropdown은 기본적으로 토글방식으로 문맥상에서 추가적인 콘텐츠나 메뉴에 사용<br>
+				기본적으로 12가지 위치를 제공하고 있으며 위치에 따른 자동설정도 가능하다. <br>
+				크게 두가지로 하나는 문장의 흐름에 맞추어 위치한 경우와 모달팝업과 같이 위치가 밖에 있는 경우가 있다.<br>
+				datePicker 사용 시 필수로 필요한 compontent 요소이다.</p>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">basic type (논리적인 순서 구조)</h3>
+				<p>문단흐름에 맞추어 마크업 구조도 동일하게 구성</p>
+				<div class="form-item mgt-s">
+					<div class="ui-select" style="width:130px">
+						<select class="drop-ps-change" title="정렬선택" id="testPs2">
+							<option>Test 위치 선택</option>
+							<option value="tl">상단 좌측정렬</option>
+							<option value="tc">상단 중앙정렬</option>
+							<option value="tr">상단 우측정렬</option>
+							<option value="bl">하단 좌측정렬</option>
+							<option value="bc">하단 중앙정렬</option>
+							<option value="br">하단 우측정렬</option>
+							<option value="rt">우측 상단정렬</option>
+							<option value="rm">우측 중앙정렬</option>
+							<option value="rb">우측 하단정렬</option>
+							<option value="lt">좌측 상단정렬</option>
+							<option value="lm">좌측 중앙정렬</option>
+							<option value="lb">좌측 하단정렬</option>
+						</select>
+					</div>
+					<button type="button" class="btn-base ui-drop mgl-xxs" id="uiDrop2"><span>드롭다운</span></button>
+					<section class="ui-drop-pnl test-w-300" data-id="uiDrop2">
+						<div class="ui-drop-box">
+							<h1>제목</h1>
+							<p>abcdefg hijklmn opqrstu vwxyz</p>
+							<p>abcdefg hijklmn opqrstu vwxyz</p>
+							<p>abcdefg hijklmn opqrstu vwxyz</p>
+							<p>abcdefg hijklmn opqrstu vwxyz</p>
+					
+							<button type="button" class="btn-base ui-drop" id="uiDrop5"><span>드롭다운</span></button>
+							<section class="ui-drop-pnl" data-id="uiDrop5">
+								<div class="ui-drop-box" style="width:300px">
+									<h1>제목</h1>
+									<p>abcdefg hijklmn opqrstu vwxyz</p>
+									<p>abcdefg hijklmn opqrstu vwxyz</p>
+									<p>abcdefg hijklmn opqrstu vwxyz</p>
+									<p>abcdefg hijklmn opqrstu vwxyz</p>
+									<p>abcdefg hijklmn opqrstu vwxyz</p>
+								</div>
+								<button type="button" class="ui-drop-close btn-close">닫기</button>
+							</section>
+							
+							<p>abcdefg hijklmn opqrstu vwxyz</p>
+						</div>
+						<button type="button" class="ui-drop-close btn-close">닫기</button>
+					</section>
+				</div>
+
+				<h3 class="h3">baseLayer type (baseLayer 위치에 있는 구조)</h3>
+				<p>z-index 값 상속문제나 overflow:hidden 속성 등으로 드롭다운 콘텐츠가 문장의 흐름에서 벗어나야할 경우 사용(baseLayer에 위치)</p>
+				<div class="form-item mgt-s">
+					<div class="ui-select" style="width:130px">
+						<select class="drop-ps-change" title="정렬선택" id="testPs1">
+							<option>Test 위치 선택</option>
+							<option value="tl">상단 좌측정렬</option>
+							<option value="tc">상단 중앙정렬</option>
+							<option value="tr">상단 우측정렬</option>
+							<option value="bl">하단 좌측정렬</option>
+							<option value="bc">하단 중앙정렬</option>
+							<option value="br">하단 우측정렬</option>
+							<option value="rt">우측 상단정렬</option>
+							<option value="rm">우측 중앙정렬</option>
+							<option value="rb">우측 하단정렬</option>
+							<option value="lt">좌측 상단정렬</option>
+							<option value="lm">좌측 중앙정렬</option>
+							<option value="lb">좌측 하단정렬</option>
+						</select>
+					</div>
+					<button type="button" class="btn-base ui-drop mgl-xxs" id="uiDrop1" aria-expanded="true"><span>드롭다운</span></button>
+				</div>
+
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>				
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"btn-wrap"</span>&gt;
+	&lt;button <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn-base ui-drop"</span> <span class="na">id=</span><span class="s">"uiDrop1"</span>&gt;&lt;span&gt;드롭다운&lt;/span&gt;&lt;/button&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-drop-wrap"</span> <span class="na">id=</span><span class="s">"uiDrpwrap"</span>&gt;
+		&lt;section <span class="na">class=</span><span class="s">"ui-drop-pnl"</span> <span class="na">data-id=</span><span class="s">"uiDrop1"</span>&gt;
+			....
+		&lt;/section&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h3 class="h3">baseLayer type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"base-layer"</span> <span class="na">id=</span><span class="s">"baseLayer"</span>&gt;
+	&lt;section <span class="na">class=</span><span class="s">"ui-drop-pnl"</span> <span class="na">data-id=</span><span class="s">"uiDrop1"</span>&gt;
+		....
+	&lt;/section&gt;
+&lt;/div&gt;
+
+&lt;div <span class="na">class=</span><span class="s">"base-wrap"</span>&gt;
+	&lt;button <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn-base ui-drop"</span> <span class="na">id=</span><span class="s">"uiDrop1"</span>&gt;&lt;span&gt;드롭다운&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>	
+					
+			
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiDropdown</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiDropdown</span>({ <span class="s">
+	id:'uiDrop1', 
+	ps:'bl', 
+	eff:'st', 
+	auto: false,
+	dim:false,
+	openback: function() { console.log('open callback'); },
+	closeback: function() { console.log('close callback'); },
+	offset:false</span> 
+});
+</code>
+</pre>
+</div>
+				<h3 class="h3">$plugins.uiDropdownToggle</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiDropdownToggle</span>({ <span class="s">
+	id:'uiDrop1', 
+	ps:'bl', 
+	eff:'st', 
+	offset:true,
+	expended:true,
+	besides:true, 
+	inner:true</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>
+						<strong>dropdown 기본 옵션</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-drop의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">ps:</th>
+							<td>[string]</td>
+							<td>'bl'</td>
+							<td>총 12가지 위치 설정
+								<ul>
+								<li>tl : 상단 좌측정렬</li>
+								<li>tc : 상단 중앙정렬</li>
+								<li>tr : 상단 우측정렬</li>
+								<li>bl : 하단 좌측정렬</li>
+								<li>bc : 하단 중앙정렬</li>
+								<li>br : 하단 우측정렬</li>
+								<li>rt : 우측 상단정렬</li>
+								<li>rm : 우측 중앙정렬</li>
+								<li>rb : 우측 하단정렬</li>
+								<li>lt : 좌측 상단정렬</li>
+								<li>lm : 좌측 중앙정렬</li>
+								<li>lb : 좌측 하단정렬</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">eff:</th>
+							<td>[string]</td>
+							<td>'base'</td>
+							<td>총 6가지 나타나는 효과 설정
+								<ul>
+								<li>base : show &amp; hide 효과</li>
+								<li>fade : opacity 효과</li>
+								<li>st : 위에서 아래로 슬라이딩</li>
+								<li>sb : 아래에서 위로 슬라이딩</li>
+								<li>sl : 좌측에서 우측로 슬라이딩</li>
+								<li>sr : 우측에서 좌측로 슬라이딩</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">offset:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>드롭다운 콘텐츠의 위치에 따라 설정
+								<ul>
+									<li>true : 위치값 절대값(offset)</li>
+									<li>false : 위치값 상대값(position)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">dim:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>오브젝트 뒤에 dim처리 설정</td>
+						</tr>
+						<tr>
+							<th scope="row">auto:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>현재 y축 위치에 따라 위아래 위치 자동 설정</td>
+						</tr>
+						<tr>
+							<th scope="row">openback:</th>
+							<td>[function]</td>
+							<td>false</td>
+							<td>오픈 시 콜백</td>
+						</tr>
+						<tr>
+							<th scope="row">closeback:</th>
+							<td>[function]</td>
+							<td>false</td>
+							<td>닫을 시 콜백</td>
+						</tr>
+						<tr>
+							<th scope="row">close:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>다른 드롭다운 닫힐지 여부
+								<ul>
+									<li>true : 선택된 이외의 드롭다운은 닫힘</li>
+									<li>false : 변경없음</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">focushold:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>포커스 홀드 여부
+								<ul>
+									<li>true : 'hold' 포커스 홀드</li>
+									<li>false : 'sense' 포커스 체크</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_06_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.page.dropdown();
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

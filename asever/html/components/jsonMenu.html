@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-menu">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+        <div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+            <main class="base-main" id="baseMain" role="main">
+                    
+                <div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">json menu</h1>
+				</div>
+                <p class="txt-s2">IA엑셀 문서 기준으로 만들어진 json파일형식의 엑셀에서 변환한 json파일로 자동 생성 관리<br>
+				메뉴관리를 엑셀문서로 진행하여 공유</p>
+                
+                <h2 class="h2">Examples</h2>
+                <div class="box-base">
+                    <nav class="ui-menu" id="uiTest" role="navigation" aria-label="글로벌 내비게이션"></nav>
+                </div>
+
+                <h3 class="h3">메뉴 리스트 excel</h3>
+                <p>메뉴구조도를 엑셀에 정리하여 관리한다.</p>
+                <div class="btn-wrap txt-l">
+                    <a href="/vanilla/resources/data/menu.xlsx" class="btn-base"><span>샘플 메뉴 엑셀 다운로드</span></a>
+                </div>
+
+
+                <h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;nav <span class="na">class=</span><span class="s">"ui-menu"</span> <span class="na">id=</span><span class="s">"uiMenu"</span>&gt;&lt;/nav&gt;
+</code>
+</pre>
+</div>
+                
+
+                <h2 class="h2">Javascript</h2>
+                <h3 class="h3">메뉴 json</h3>
+                <p>메뉴 리스트 excel파일의 data를 드래그 카피하여 지정된 json파일에 복사한다.</p>
+<div class="box-code">
+<pre>
+<code>
+{"menu":[
+{"id":"","use":"N","code":"G_00_00_00_00","ctg":"가이드","d1":"Main","n1":"G00","d2":"","order":"","d3":"","d4":"","link":"/vanilla/html/index.html","blank":"","pop":"","tit":"Main"},
+{"id":"","use":"Y","code":"G_01_01_00_00","ctg":"가이드","d1":"Guide","n1":"G01","d2":"","order":"","d3":"","d4":"","link":"#","blank":"","pop":"","tit":"Guide"},
+{"id":"","use":"Y","code":"G_01_01_00_00","ctg":"가이드","d1":"","n1":"G01","d2":"Getting Started","order":"1","d3":"","d4":"","link":"#","blank":"","pop":"","tit":"Getting Started"},
+...
+]}
+</code>
+</pre>
+</div>
+                <h3 class="h3">$plugins.uiMenu</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na"></span>.uiMenu</span>({ <span class="si">
+    url:'/vanilla/resources/data/menu.json', 
+    ctg:'개인', 
+    selected:'P_02_01_01_00', 
+    callback:function(v){...}</span>
+});
+</code>
+</pre>
+</div>
+
+
+
+
+                <table class="tbl-base type-option">
+                <caption>옵션 설명</caption>
+                <colgroup>
+                    <col class="col-th">
+                    <col class="col-th">
+                    <col class="col-th">
+                    <col class="col-auto">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">옵션명</th>
+                        <th scope="col">유형</th>
+                        <th scope="col">기본</th>
+                        <th scope="col">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="nec">
+                        <th scope="row">url:</th>
+                        <td>[string]</td>
+                        <td>'link'</td>
+                        <td>(필수) 메뉴 정보를 불러올 json or html 파일 경로</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ctg:</th>
+                        <td>[string]</td>
+                        <td>''</td>
+                        <td>메뉴의 구분 선택. 옵션이 없을 경우 전체</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">selected:</th>
+                        <td>[string]</td>
+                        <td>'A_00_00_00_00'</td>
+                        <td>현재 페이지의 화면id명</td>
+                    </tr>
+                    <tr class="nec">
+                        <th scope="row">callback:</th>
+                        <td>[function]</td>
+                        <td></td>
+                        <td>(필수) 콜백으로 d1, d2, d3, current, navi 5가지 값을 받는다.
+                            <ul>
+                            <li>d1: depth1 html</li>
+                            <li>d2: depth2 html</li>
+                            <li>d3: depth3 html</li>
+                            <li>current: 현재 선택된 위치값으로 [n,n,n] 배열값으로 숫자 정보로 받는다</li>
+                            <li>navi: 선택된 메뉴의 경로를 [n,n,n] 배열 값으로 메뉴명으로 받는다</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </main>
+        </div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+    <!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_11_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiMenu({ id:'uiTest', url:'/vanilla/resources/data/menu.json', ctg:'전체', selected:'G_01_03_02_00', callback:fncallback });
+                function fncallback(opt){
+                    var d1 = opt.d1,
+                        d2 = opt.d2,
+                        d3 = opt.d3,
+                        current = opt.current,
+                        navi = opt.navi,
+                        navi_len = navi.length,
+                        html_navi = '',
+                        $menu = $('#uiTest');
+
+                    $menu.append(d1).append(d2).append(d3);
+                    $menu.find('.dep-2-wrap').each(function(){
+                        var menu_html = this;
+
+                        $(menu_html).data('dep1')
+                        $('.dep-1[data-n="'+ $(menu_html).data('dep1') +'"]').append(menu_html);
+                    });
+                    $menu.find('.dep-3-wrap').each(function(){
+                        var menu_html = this;
+
+                        $(menu_html).data('dep1')
+                        $('.dep-1[data-n="'+ $(menu_html).data('dep1') +'"]').find('.dep-2[data-n="'+ $(menu_html).data('dep2') +'"]').append(menu_html);
+                    });
+                    $menu.find('.dep-1-wrap').removeClass('hide');
+                }
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Tab</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+</head>
+
+<body class="page-tab">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside">
+				<ul>
+					<li><a href="#">Top</a></li>
+					<li><a href="#title1">Examples</a></li>
+					<li><a href="#title2">HTML Structure</a></li>
+					<li><a href="#title3">Javascript</a></li>
+				</ul>
+			</aside>
+			<main class="base-main" id="baseMain">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Tab</h1>
+				</div>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">기본 탭</h3>
+				<div class="ui-tab" id="exeTab1">
+					<div class="ui-tab-btns">
+						<button type="button" class="ui-tab-btn"><i>탭1</i></button>
+						<button type="button" class="ui-tab-btn"><i>탭2</i></button>
+						<button type="button" class="ui-tab-btn"><i>탭3</i></button>
+					</div>
+					<div class="ui-tab-pnls">
+						<section class="ui-tab-pnl">
+							<h1 class="ui-tab-tit">탭1</h1>
+							<p>탭1 content</p>
+							<a href="#">더보기</a>
+							
+							<div class="ui-tab" id="exeTab12">
+								<div class="ui-tab-btns">
+									<button type="button" class="ui-tab-btn"><i>탭1-1</i></button>
+									<button type="button" class="ui-tab-btn"><i>탭1-2</i></button>
+								</div>
+								<div class="ui-tab-pnls">
+									<section class="ui-tab-pnl">
+										<h1 class="ui-tab-tit">탭1-1</h1>
+										<p>탭1-1 content</p>
+										<a href="#">더보기</a>
+									</section>
+									<section class="ui-tab-pnl">
+										<h1 class="ui-tab-tit">탭1-2</h1>
+										<p>탭1-2 content</p>
+										<a href="#">더보기</a>
+									</section>
+								</div>
+							</div>
+						</section>
+						<section class="ui-tab-pnl">
+							<h1 class="ui-tab-tit">탭2</h1>
+							<p>탭2 content</p>
+							<a href="#">더보기</a>
+						</section>
+						<section class="ui-tab-pnl">
+							<h1 class="ui-tab-tit">탭3</h1>
+							<p>탭3 content</p>
+							<a href="#">더보기</a>
+						</section>
+					</div>
+				</div>
+
+				<div class="ui-tab tab-scroll" id="exeTab4">
+					<div class="ui-tab-btns">
+						<div class="tab-scroll-wrap">
+						<button type="button" class="ui-tab-btn"><i>주유/정비</i></button>
+						<button type="button" class="ui-tab-btn"><i>외식</i></button>
+						<button type="button" class="ui-tab-btn"><i>편의/쇼핑</i></button>
+						<button type="button" class="ui-tab-btn"><i>영화/도서</i></button>
+						<button type="button" class="ui-tab-btn"><i>보험/금융</i></button>
+						<button type="button" class="ui-tab-btn"><i>게임</i></button>
+						<button type="button" class="ui-tab-btn"><i>문화</i></button>
+						<button type="button" class="ui-tab-btn"><i>여행</i></button>
+						</div>
+					</div>
+					<div class="ui-tab-pnls">
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">주유/정비</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">외식</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">편의/쇼핑</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">영화/도서</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">보험/금융</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">게임</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">문화</h1></section>
+						<section class="ui-tab-pnl"><h1 class="ui-tab-tit">여행</h1></section>
+					</div>
+				</div>
+
+				<h3 class="h3">예외 사항 (unres:true)</h3>
+				<p>기본적으로 탭 클릭 시 콘텐츠 내용이 변경되는 기능을 빼고 콜백값으로 컨트롤이 필요한 경우 사용.</p>
+				<div class="ui-tab" id="exeTab2">
+					<div class="ui-tab-btns">
+						<button type="button" class="ui-tab-btn" ><i>공지사항</i></button>
+						<button type="button" class="ui-tab-btn"><i>이벤트</i></button>
+						<button type="button" class="ui-tab-btn"><i>FAQ</i></button>
+					</div>
+					<div class="ui-tab-pnls">
+						<section class="ui-tab-pnl">
+							<h1 class="ui-tab-tit">공지사항</h1>
+							<a href="#">더보기</a>
+						</section>
+					</div>
+				</div>
+				
+				<h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"ui-tab"</span> <span class="na">id=</span><span class="s">"exeTab1"</span>&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-tab-btns"</span>&gt;
+		&lt;button <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"ui-tab-btn"</span>&gt;&lt;i&gt;탭1&lt;/i&gt;&lt;/button&gt;
+		&lt;button <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"ui-tab-btn"</span>&gt;&lt;i&gt;탭2&lt;/i&gt;&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-tab-pnls"</span>&gt;
+		&lt;section <span class="na">class=</span><span class="s">"ui-tab-pnl"</span>&gt;
+			&lt;h1 <span class="na">class=</span><span class="s">"ui-tab-tit"</span>&gt;탭1&lt;/h1&gt;
+			탭1 내용
+		&lt;/section&gt;
+		&lt;section <span class="na">class=</span><span class="s">"ui-tab-pnl"</span>&gt;
+			&lt;h1 <span class="na">class=</span><span class="s">"ui-tab-tit"</span>&gt;탭2&lt;/h1&gt;
+			탭2 내용
+		&lt;/section&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>	
+
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiTab</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiTab</span>({ <span class="s">
+	id:'exeTab1', 
+	current:0, 
+	label:'인증서', 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>	
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-tab의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">current:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>처음 열린패널 선택</td>
+						</tr>
+						<tr>
+							<th scope="row">label:</th>
+							<td>[string]</td>
+							<td>''</td>
+							<td>aria-label 명</td>
+						</tr>
+						<tr>
+							<th scope="row">unres :</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>탭 선택 시 컨텐츠 변경 여부
+								<ul>
+								<li>true : 미변경</li>
+								<li>false : 변경</li>
+								</ul>
+
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 현재선택 index값</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiTabAct</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiTabAct</span>({ <span class="s">
+	id:'exeTab1', 
+	current:0, 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-tab의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">current:</th>
+							<td>[number]</td>
+							<td>0</td>
+							<td>처음 열린패널 선택</td>
+						</tr>
+						<tr>
+							<th scope="row">unres :</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>탭 선택 시 컨텐츠 변경 여부
+								<ul>
+								<li>true : 미변경</li>
+								<li>false : 변경</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 현재선택 index값</td>
+						</tr>
+					</tbody>
+				</table>
+
+				
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiTab</span>({ <span class="s">
+	id:'exeTab1', 
+	current:0, 
+	unres:true, 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>
+				<h3 class="h3">parameter 값으로 탭 선택방법</h3>
+<div class="box-code">
+<pre><code>
+single 선택
+/vanilla/html/components/tab.html<span class="s">?tab=1</span> 
+
+복수 선택
+/vanilla/html/components/tab.html<span class="s">?tab=exeTab1*0+exeTab1_2*1+exeTab2*1</span> 
+탭아이디*선택+탭아이디*선택....
+<span class="s">주의 : tab의 아이디를 '*'이 들어가는 이름으로 설정하면 안된다.</span>
+
+</code>
+</pre>
+</div>	
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- script -->
+	<script src="/vanilla/resources/js/ui.global.vanilla.js"></script>
+	<script src="/vanilla/resources/js/ui.common.vanilla.js"></script>
+	<script>
+		;(function(win, doc, undefined) {
+			document.addEventListener("DOMContentLoaded", function() {
+				console.log('ready');
+				$plugins.common.init();
+				
+				console.log('page ready after')
+				$plugins.uiTab({ id:'exeTab1', current:0, label:'인증서', callback:tabCallback });
+				$plugins.uiTab({ id:'exeTab12', current:0, label:'인증서2', callback:tabCallback });
+				$plugins.uiTab({ id:'exeTab2', current:2, unres:true, callback: tabCallback2  });
+
+				$plugins.uiTab({ id:'exeTab4', current:0, callback: tabCallback2  });
+				
+				function tabCallback(v){
+					console.log(v);
+				}
+				function tabCallback2(v){
+					$('#'+ v.id).find('.ui-tab-tit').text($('#'+ v.id).find('.ui-tab-btn').eq(v.current).text());
+					console.log(v);
+				}
+				
+				$('.ui-tab-btns').on('scroll', function(){
+					//console.log($(this).scrollLeft());
+				});
+			});
+		})(window, document);
+	</script>
+
+</body>
+</html>

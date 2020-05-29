@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+</head>
+
+<body id="BODY">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit"></h1>
+				</div>
+				<p class="txt-s2">시스템 알림창, 컨텐츠창 사용</p>
+				
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">basic type</h3>
+				<p>기본적인 모달 팝업 세팅 및 실행</p>
+				<div class="btn-wrap mgt-s txt-l">
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ 
+							id:'modal_sample1', 
+							link:'/vanilla/html/modal/modalSample1.html', 
+							remove:true, 
+							openback: function() { console.log('open callback'); },
+							closeback: function(v) { console.log('close callback', v); },
+							callback:$plugins.page.callback 
+						});
+					"><span>Ajax 기본 팝업(center)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ 
+							id:'modal_sample2', 
+							link:'/vanilla/html/modal/modalSample2.html', 
+							remove:true, 
+							mpage: true,
+							openback: function() { console.log('open callback2'); },
+							closeback: function(v) { console.log('close callback2', v); },
+							width:700 
+						});
+					"><span>Ajax 기본 팝업(scroll)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ 
+							id:'modal_sample5', 
+							width: 600,
+							link:'/vanilla/html/modal/modalSample5.html', 
+							mpage: true,
+							openback: function() { console.log('open callback3'); },
+							closeback: function(v) { console.log('close callback3', v); },
+							remove:true 
+						});
+					"><span>Ajax 기본 팝업(loading)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ id:
+							'modal_sample4', 
+							link:'/vanilla/html/modal/modalSample4.html', 
+							remove:true, 
+							mpage: true,
+							openback: function() { console.log('open callback3'); },
+							closeback: function(v) { console.log('close callback3', v); },
+							open:false 
+						});
+					"><span>Ajax 기본 팝업(wait)</span></button>
+					
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ 
+							id:'modal_sample3', 
+							remove: true,
+							mpage: true,
+							iname : 'iframe_modal_sample3',
+							isrc: '/vanilla/html/modal/modalSample3.html',
+							ititle:'아이프레임 팝업'
+						});
+					"><span>Ajax 기본 팝업(iframe)</span></button>
+
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiModal({ id:'modal_sample1', link:'/vanilla/html/modal/modalSample1.html', ps:'top', remove:true, callback:$plugins.page.callback });
+					"><span>Ajax 기본 팝업(top)</span></button>
+				</div>
+
+				<h3 class="h3">simple type</h3>
+				<p>기본적인 모달 팝업 세팅 및 실행</p>
+				<div class="btn-wrap mgt-s txt-l">
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiSimpleModalOpen({ 
+							id:'modal_sample1', 
+							src:'/vanilla/html/modalSp/modalSample1.html', 
+							full: true,
+							openback: function() { console.log('open callback'); },
+							closeback: function(v) { console.log('close callback', v); },
+							callback:$plugins.page.callback 
+						});
+					"><span>Ajax 기본 팝업(full)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiSimpleModalOpen({ 
+							id:'modal_sample1', 
+							src:'/vanilla/html/modalSp/modalSample1.html', 
+							openback: function() { console.log('open callback'); },
+							closeback: function(v) { console.log('close callback', v); },
+							callback:$plugins.page.callback 
+						});
+					"><span>Ajax 기본 팝업(center)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiSimpleModalOpen({ 
+							id:'modal_sample1', 
+							src:'/vanilla/html/modalSp/modalSample1.html', 
+							ps: 'top',
+							openback: function() { console.log('open callback'); },
+							closeback: function(v) { console.log('close callback', v); },
+							callback:$plugins.page.callback 
+						});
+					"><span>Ajax 기본 팝업(top)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiSimpleModalOpen({ 
+							id:'modal_sample1', 
+							src:'/vanilla/html/modalSp/modalSample1.html', 
+							ps: 'bottom',
+							openback: function() { console.log('open callback'); },
+							closeback: function(v) { console.log('close callback', v); },
+							callback:$plugins.page.callback 
+						});
+					"><span>Ajax 기본 팝업(bottom)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.uiSimpleModalOpen({ 
+							id:'modal_sample2', 
+							src:'/vanilla/html/modalSp/modalSample2.html', 
+							remove:true, 
+							mpage: true,
+							openback: function() { console.log('open callback2'); },
+							closeback: function(v) { console.log('close callback2', v); },
+							width:700 
+						});
+					"><span>Ajax 기본 팝업(scroll)</span></button>
+
+				</div>
+
+				<h3 class="h3">System type</h3>
+				<p>system 모달 팝업 세팅 및 실행</p>
+				<div class="btn-wrap mgt-s txt-l">
+					<button type="button" class="btn-base" onclick="
+						$plugins.modal.system({
+							type : 'alert',
+							btn_alert : '확인',
+							cont_text : '확인하세요',
+							width : 310,
+							zindex : null,
+							state : '알림',
+							confirmCallback: function(){console.log('alert 확인')}
+						});
+					"><span>알림(alert)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.modal.system({
+							type : 'confirm',
+							btn_confirm_yes : '확인',
+							btn_confirm_no : '취소',
+							cont_text : '둘중에 하나를 선택하세요<br> 오직 하나만~',
+							zindex : 100,
+							state : '선택',
+							confirmCallback: function(){console.log('confirm 확인')},
+							cancelCallback: function(){console.log('confirm 취소')}
+						});
+					"><span>선택(confirm)</span></button>
+
+					<button type="button" class="btn-base" onclick="
+						$plugins.modal.system({
+							type : 'alert',
+							btn_alert : '확인',
+							cont_text : '오류가 있습니다.',
+							width : 310,
+							state : '오류',
+							confirmCallback: function(){console.log('alert 확인')}
+						});
+					"><span>오류(confirm)</span></button>
+				</div>
+
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">base type</h3>
+				<div class="markup-modal">
+					<section class="ui-modal" id="modal_name" role="dialog" aria-hidden="true" style="height:321px">
+						<div class="ui-modal-wrap">
+							<header class="ui-modal-header">
+								<h1 class="ui-modal-tit"><span>제목</span></h1>
+							</header>
+							<div class="ui-modal-cont" style="height:200px">
+								내용...
+							</div>
+							<div class="ui-modal-footer">
+								<button type="button" class="btn-base" onclick="$plugins.uiModalClose({ id:'modal_name', callback:function(){ console.log('확인'); } });">확인</button>
+							</div>
+							<button type="button" class="ui-modal-close btn-close" aria-label="close" >닫기</button>
+						</div>
+					</section>
+				</div>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">&lt;div class="base-layer" id="baseLayer"&gt;</span>
+	&lt;section <span class="na">class=</span><span class="s">"ui-modal"</span> <span class="na">id=</span><span class="s">"modal_name"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span>&gt;
+		&lt;div <span class="na">class=</span><span class="s">"ui-modal-wrap"</span>&gt;
+			&lt;header <span class="na">class=</span><span class="s">"ui-modal-header"</span>&gt;
+				&lt;h1 <span class="na">class=</span><span class="s">"ui-modal-tit"</span>&gt;&lt;span&gt;title&lt;/span&gt;&lt;/h1&gt;
+			&lt;/header&gt;
+			&lt;div <span class="na">class=</span><span class="s">"ui-modal-cont"</span>&gt;
+				....
+			&lt;/div&gt;
+			&lt;div <span class="na">class=</span><span class="s">"ui-modal-footer"</span>&gt;
+				&lt;button type="button" class="btn-base"&gt;확인&lt;/button&gt;
+			&lt;/div&gt;
+			&lt;button type="button" <span class="na">class=</span><span class="s">"ui-modal-close btn-close"</span>&gt;닫기&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+<span class="c">&lt;/div&gt;</span>
+</code>
+</pre>
+</div>
+				<h3 class="h3">system type</h3>
+				<div class="markup-modal">
+					<section class="ui-modal modal-system" id="modalSystem2" role="dialog" aria-hidden="true">
+						<div class="ui-modal-wrap">
+							<div class="ui-modal-cont">
+								<div id="modalSystemTxt2">
+									시스템적으로 알려드리는 메시지입니다.
+								</div>
+								<div class="btn-wrap">
+									<button type="button" class="btn-base" id="modalSystemBtn12">확인</button>
+								</div>
+							</div>
+							<button type="button" class="ui-modal-close btn-close" aria-label="close" >닫기</button>
+						</div>
+					</section>
+				</div>
+<div class="box-code">
+<pre>
+<code>
+&lt;section class="ui-modal modal-system" id="modalSystem" role="dialog" aria-hidden="true"&gt;
+    &lt;div class="ui-modal-wrap"&gt;
+        &lt;div class="ui-modal-cont"&gt;
+            &lt;div id="modalSystemTxt"&gt;
+
+            &lt;/div&gt;
+            &lt;div class="btn-wrap"&gt;
+                &lt;button type="button" id="modalSystemBtn1" class="btn-base"&gt;---&lt;/button&gt;
+                &lt;button type="button" id="modalSystemBtn2" class="btn-base"&gt;---&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type="button" class="ui-modal-close btn-close" aria-label="close" &gt;닫기&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+</div>
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiModal</h3>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// width,height 값을 주면 </span>
+$plugins<span class="na">.uiModal</span>({ <span class="s">
+	id:'modal_name', 
+	width:500, 
+	height:500, 
+	ps:'top' 
+	endfocus:'idname', 
+	full:true, 
+	link:'/vanilla/html/modal/sample.html', 
+	openback: function() { console.log('open callback'); },
+	closeback: function() { console.log('close callback'); }</span> 
+});
+</code>
+</pre>
+</div>
+
+				<table class="tbl-base type-option">
+					<caption>
+						<strong>$plugins.uiModal 옵션 설명</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'modal_name'</td>
+							<td>(필수) ui-modal의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">ps:</th>
+							<td>[string]</td>
+							<td>'center'</td>
+							<td>모달 레이어 팝업 생성될 위치 설정
+								<ul>
+								<li>'top' : 상단 위치</li>
+								<li>'center' : 중앙 위치</li>
+								<li>'bottom' : 하단 위치</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">open:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>실행 시 바로 모달 레이어 팝업 오픈여부 선택
+								<ul>
+								<li>true : 모달 레이어 팝업 오픈</li>
+								<li>false : 모달 레이어 팝업 관련 파일만 불러온 상태 <br> 
+								$plugins.uiModalopen({ id:'modal_name' });  을 실행해야지 모달 열림
+
+								</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">full:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>전체 사이즈 모달 레이어 팝업 설정
+								<ul>
+								<li>true : 전체화면</li>
+								<li>false : 기본 사이즈</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">link:</th>
+							<td>[string]</td>
+							<td></td>
+							<td>Ajax로 파일을 불러올 url경로</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">endfocus:</th>
+							<td>[string]</td>
+							<td>document.activeElement</td>
+							<td>모달 레이어 팝업 닫을 시 포커스가 갈 위치의 아이디 값 설정<br>
+								기본으로 모달 레이어 팝업 띄우기 전 포커스로 설정되나 그 값도 없을 경우 body로 설정
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">width:</th>
+							<td>[number]</td>
+							<td></td>
+							<td>모달 레이어 팝업 가로 크기<br>
+								옵션이 없을 경우 모달 팝업의 크기
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">height:</th>
+							<td>[number]</td>
+							<td></td>
+							<td>모달 레이어 팝업 세로 크기<br>
+								옵션이 없을 경우 모달 팝업의 크기
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">openback:</th>
+							<td>[function]</td>
+							<td>false</td>
+							<td>모달 레이어 팝업 오픈 시 콜백값 실행</td>
+						</tr>
+						<tr>
+							<th scope="row">closeback:</th>
+							<td>[function]</td>
+							<td>false</td>
+							<td>모달 레이어 팝업 닫을 시 콜백값 실행</td>
+						</tr>
+						<tr>
+							<th scope="row">autofocus:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>모달 닫을 시 포커스 자동이동 여부 설정</td>
+						</tr>
+						<tr>
+							<th scope="row">mpage:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>모바일 디바이스에서 true일 경우 페이지 형식(전체 화면)으로 생성</td>
+						</tr>
+						<tr>
+							<th scope="row">cutline:</th>
+							<td>[number]</td>
+							<td>31</td>
+							<td>.ui-modal-cont 의 기본 페딩이 15일 경우 그 값보다 1 큰값으로 설정하여 콘텐츠 로딩여부 판단에 사용. </td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<h3 class="h3">$plugins.modal.system</h3>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// 확인 </span>
+$plugins<span class="na">.modal.system</span>({ <span class="s">
+	type : 'alert',
+	btn_alert : '확인',
+	cont_text : '확인하세요.',
+	state : '알림',
+	confirmCallback: function(){console.log('alert 확인')}</span> 
+});
+
+<span class="c">// 선택 </span>
+$plugins<span class="na">.modal.system</span>({ <span class="s">
+	type : 'alert',
+	btn_alert : '확인',
+	cont_text : '오류가 있습니다.',
+	state : '오류',
+	confirmCallback: function(){console.log('alert 확인')}</span> 
+});
+
+<span class="c">// 오류 </span>
+$plugins<span class="na">.modal.system</span>({ <span class="s">
+	type : 'confirm',
+	btn_confirm_yes : '확인',
+	btn_confirm_no : '취소',
+	cont_text : '둘중에 하나를 선택하세요. &lt;br&gt; 오직 하나만~',
+	state : '선택',
+	confirmCallback: function(){console.log('confirm 확인')},
+	cancelCallback: function(){console.log('confirm 취소')}</span> 
+});
+</code>
+</pre>
+</div>
+
+				
+
+				<h3 class="h3">$plugins.uiModalOpen</h3>
+				<p>$plugins.uiModal (open:false) 옵션을 준 상태 모달 레이어 팝업 오픈 </p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiModalOpen</span>({ <span class="s">id:'modal_name'</span> });
+</code>
+</pre>
+</div>
+
+				<h3 class="h3">$plugins.uiModalResize</h3>
+				<p>모달 레이어 팝업안에 컨텐츠의 동적 생성으로 사이즈 변경이 필요할 시 실행</p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiModalResize</span>({ <span class="s">id:'modal_name'</span> });
+</code>
+</pre>
+</div>
+
+				<h3 class="h3">$plugins.uiModalClose</h3>
+				<p>모달 레이어 팝업 닫을 시 사용</p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiModalClose</span>({ <span class="s">
+	id:'modal_name', 
+	endfocus:'idname', 
+	callback:function(v){console.log(v)}</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>
+						<strong>$plugins.uiModalClose 옵션 설명</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'modal_name'</td>
+							<td>(필수) ui-modal의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">remove:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>모달팝업 콘텐츠 삭제 여부
+								<ul>
+								<li>true: 코드삭제</li>
+								<li>false: 미삭제</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">endfocus:</th>
+							<td>[string]</td>
+							<td>document.activeElement</td>
+							<td>모달팝업 닫을 시 포커스가 갈 위치의 아이디 값 설정<br>
+								기본으로 모달팝업 띄우기 전 포커스로 설정되나 그 값도 없을 경우 body로 설정
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td></td>
+							<td>모달팝업 닫을 시 콜백함수 실행</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.global.js"></script>
+	<script src="/vanilla/resources/js/ui.common.js"></script>
+
+	<script src="/vanilla/resources/js/ui.plugins.menu.js"></script>
+	<script src="/vanilla/resources/js/ui.plugins.modal.js"></script>
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_13_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				// $('.btn-base').on('click', function(){
+				// 	switch($(this).attr('id')){
+				// 	case 'modalOpen1':
+				// 		$plugins.uiModal({ id:'modal_sample1', link:'/vanilla/html/modal/modalSample1.html', callback:$plugins.page.callback });
+				// 		break;
+				// 	case 'modalOpen2':
+				// 		$plugins.uiModal({ id:'modal_sample2', link:'/vanilla/html/modal/modalSample2.html', callback:$plugins.page.callback, width:700 });
+				// 		break;
+				// 	}
+
+				// });
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

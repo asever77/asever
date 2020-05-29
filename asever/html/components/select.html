@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-select">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+					
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit"></h1>
+				</div>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">CSS Design</h3>
+				<p>CSS로 스타일 표현하나 IE등 일부 브라우저에서는 지원을 안함.</p>
+				<fieldset class="mgt-s">
+					<legend>기본 스타일</legend>
+					<select title="년도 선택" id="sel1">
+						<option value="1" selected>2018</option>
+						<option value="2">2017</option>
+						<option value="3">2016</option>
+						<option value="4">2015</option>
+					</select>
+				</fieldset>
+
+				<h3 class="h3">Custom Select</h3>
+				<p>모든 브라우저에서 동일한 UI와 디자인으로 접근 가능. option도 디자인 표현이 가능 </p>			
+				<div class="in-wrap mgt-s">
+					<fieldset >
+						<legend>지역선택</legend>
+
+						<div class="in-item">
+							<label for="forSelLocal" class="lb-tit ui-select-label">아이유 앨범</label>
+							<div class="ui-select type-tel">
+								<select title="Palette 선택" id="forSelLocal">
+									<option value="1">이 지금</option>
+									<option value="2">팔레트</option>
+									<option value="3" selected>이런 엔딩</option>
+									<option value="4">사랑이 잘</option>
+								</select>
+							</div>
+						</div>
+						<div class="in-item mgl-xxs">
+							<div class="ui-select type-bank" style="width:150px">
+								<select title="Palette 앨범" id="uiSel1" onchange="console.log(this.value);">
+									<option value="1">이 지금</option>
+									<option value="2" selected>팔레트(Feat. G-DRAGON)</option>
+									<option value="3" >이런 엔딩</option>
+									<option value="4">사랑이 잘(with 오혁)</option>
+									<option value="5">잼잼</option>
+									<option value="6">Black Out</option>
+									<option value="7">마침표</option>
+									<option value="8">밤편지(Through the Night)</option>
+									<option value="9">그렇게 사랑은</option>
+									<option value="10">이름에게</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="in-wrap mgt-s">
+					<div class="in-item">
+						<button type="button" class="btn-base" id="changeOption">동적 셀렉트 옵션 변경</button>
+					</div>
+					<div class="in-item mgl-xxs">
+						<div class="ui-select" style="width:100px">
+							<select title="구 선택" id="uiSel2" onchange="console.log(this.value)">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;label <span class="na">for=</span><span class="s">"uiSel1"</span> <span class="na">class=</span><span class="s">"ui-select-label"</span>&gt;아이유 앨범&lt;/label&gt;
+&lt;div <span class="na">class=</span><span class="s">"ui-select"</span>&gt;
+	&lt;select <span class="na">title=</span><span class="s">"Palette 선택"</span> <span class="na">id=</span><span class="s">"uiSel1"</span>&gt;
+		&lt;option <span class="na">value=</span><span class="s">"1"</span>&gt;밤편지&lt;/option&gt;
+		&lt;option <span class="na">value=</span><span class="s">"2"</span>&gt;잼잼&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiSelect()</h3>
+				<p>현재 select box기준으로 디자인 select 생성. 첫적용이나 동적인 변경이 있을때 사용한다. 특히 동적인 변경일 경우는 id로 개별 실행해주는게 좋다.</p>
+<div class="box-code">
+<pre>
+<code>
+//전체 실행
+$plugins.uiSelect();
+
+//개별 실행
+$plugins.uiSelect({ 
+	id:'forSelLocal', 
+	current:0 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>
+						<strong>selectg 기본 옵션</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>ui-select에 포함된 select의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">current:</th>
+							<td>[number]</td>
+							<td>null</td>
+							<td>option 선택될 위치</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>false</td>
+							<td>값 선택 시 콜백실행.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiSelectAct()</h3>
+				<p>마우스, 키보드 이벤트가 아닌 option값 선택을 할 때 사용. $plugins.uiSelect()을 사용해도 되나 불필요한 재구성을 하지 않아 값변경 시에는 $plugins.uiSelectAct를 사용한다. </p>
+<div class="box-code">
+<pre>
+<code>
+$plugins.uiSelect({ 
+	id:'forSelLocal', 
+	current:0,
+	callback:function(v){console.log(v)}
+});
+</code>
+</pre>
+</div>
+				
+				
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before');
+			$plugins.common.pageid = 'G_03_16_00_00';
+
+			$(doc).ready(function(){
+				console.log('page ready after');
+				$plugins.uiSelect();
+
+				$plugins.uiSelect({ 
+					id:'forSelLocal', 
+					current:0,
+					callback:function(v){console.log(1111111111111)} 
+				});
+
+				$plugins.uiSelect({ 
+					id:'uiSel1', 
+					current:4, 
+					callback:function(v){console.log(v)} 
+				});
+				
+				var opttxt = 5;
+				$('#changeOption').on('click', function(){
+
+					$('#uiSel2').append('<option value="'+ opttxt +'">'+ opttxt +'</option>');
+					opttxt = opttxt + 1;
+
+					$plugins.uiSelect({ id:'uiSel2' });
+				});
+
+			
+			 $(document).on('change', '.ui-select select', aaaa())
+
+
+			 function aaaa(){
+				 console.log(2);
+			 }
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

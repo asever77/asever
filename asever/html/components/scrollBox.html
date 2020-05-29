@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body>
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">스희롤바</h1>
+				</div>
+
+				<h2 class="h2">Examples</h2>
+				<div class="ui-scrollbox">
+					<section class="ui-scrollbox-item">
+						<div class="ui-scrollbox-cont" style="width:100%; height:500px; background:#999">
+
+						</div>
+					</section>
+					<section class="ui-scrollbox-item">
+						<div class="ui-scrollbox-cont" style="width:100%; height:900px; background:#888">
+
+						</div>
+					</section>
+					<section class="ui-scrollbox-item">
+						<div class="ui-scrollbox-cont" style="width:100%; height:400px; background:#777">
+
+						</div>
+					</section>
+					<section class="ui-scrollbox-item">
+						<div class="ui-scrollbox-cont" style="width:100%; height:300px; background:#666">
+
+						</div>
+					</section>
+					<section class="ui-scrollbox-item">
+						<div class="ui-scrollbox-cont" style="width:100%; height:500px; background:#555">
+
+						</div>
+					</section>
+				</div>
+
+				
+
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_26_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiScrollBox({
+					callback:function(v) {
+						console.log(v);
+					}
+				});
+				
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-form">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<h1 class="h1" id="uiPageTit">Title</h1>
+
+				<p class="bul-star">입력은 input type, 선택은 select</p>
+				<div class="tbl-wrap">
+					<table class="tbl-base">
+						<caption role="text">
+							<strong>title 규칙 정의</strong>
+							<p class="ui-caption">label명, title, title, title 정보입니다.</p>
+						</caption>
+						<colgroup>
+						<col class="col-auto">
+						<col class="col-m">
+						<col class="col-m">
+						<col class="col-m">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">label명</th>
+								<th scope="col">title</th>
+								<th scope="col">title</th>
+								<th scope="col">title</th>
+							</tr>
+						</thead>
+						<tbody class="txt-l th-bg">
+							<tr>
+								<th scope="row">이름</th>
+								<td>이름 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주민등록번호</th>
+								<td>주민등록번호 앞 6자리 입력</td>
+								<td>주민등록번호 뒤 7자리 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">생년월일</th>
+								<td>생년월일 8자리 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">성별</th>
+								<td>성별 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">이메일</th>
+								<td>이메일 아이디 입력</td>
+								<td>이메일 주소 선택</td>
+								<td>이메일 주소 입력</td>
+							</tr>
+							<tr>
+								<th scope="row">(자택/직장/기타) 연락처</th>
+								<td>(자택/직장/기타) 국번 선택 </td>
+								<td>(자택/직장/기타) 전화번호 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">휴대폰번호</th>
+								<td>통신사 선택</td>
+								<td>휴대폰번호 식별자 선택</td>
+								<td>휴대폰번호 입력</td>
+							</tr>
+							<tr>
+								<th scope="row">인증번호</th>
+								<td>인증번호 6자리 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">팩스</th>
+								<td>팩스 국번 선택</td>
+								<td>팩스 번호 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">(여권) 영문명</th>
+								<td>(여권) 영문명 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">자동이체 계좌or계좌정보</th>
+								<td>은행 선택</td>
+								<td>계좌번호 입력</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<th scope="row">이체일</th>
+								<td>이체일 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">보험료 납입계좌</th>
+								<td>은행 선택</td>
+								<td>계좌번호 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">카드번호</th>
+								<td>카드번호 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">유효기간</th>
+								<td>유효기간 월 2자리 입력</td>
+								<td>유효기간 년도 2자리 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">(휴대폰사설인증)비밀번호</th>
+								<td>비밀번호 6자리 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">(카드인증)비밀번호</th>
+								<td>비밀번호 앞 2자리 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">내용</th>
+								<td>내용 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">조회기간(달력)</th>
+								<td>시작일 입력</td>
+								<td>종료일 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">도착일시</th>
+								<td>도착일 입력</td>
+								<td>도착시간 선택/td&gt;
+								</td><td></td>
+							</tr>
+							<tr>
+								<th scope="row">자동차번호</th>
+								<td>자동차번호 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">함께 운전하는 가족 인원수</th>
+								<td>함께 운전하는 가족 인원수 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">본인과의 관계</th>
+								<td>본인과의 관계 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">(자택/직장/기타)주소/우편물수령처</th>
+								<td>(자택/직장/기타) 주소/우편물 수령처 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">통합검색</th>
+								<td>주소 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">도로명주소로 찾기</th>
+								<td>도로명주소 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">지번주소로 찾기</th>
+								<td>지번주소 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주소</th>
+								<td>기본주소 입력</td>
+								<td>상세주소 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">시/도</th>
+								<td>시/도 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">시/구/군</th>
+								<td>시/구/군 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">피보험자</th>
+								<td>피보험자 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">미성년 피보험자</th>
+								<td>미성년 피보험자 선택</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">게시판 검색영역</th>
+								<td>분류 선택</td>
+								<td>검색어 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">업태/종목</th>
+								<td>업태 입력</td>
+								<td>종목 입력</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">사업자등록번호</th>
+								<td>사업자등록번호 앞 3자리 입력</td>
+								<td>사업자등록번호 중간 2자리 입력</td>
+								<td>사업자등록번호 마지막 5자리 입력</td>
+							</tr>
+							<tr>
+								<th scope="row">법인번호</th>
+								<td>법인번호 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">법인명(상호명)</th>
+								<td>법인명(상호명) 입력</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$(doc).ready(function(){
+				$plugins.common.pageid = 'G_01_03_00_00';
+				console.log('page ready after')
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

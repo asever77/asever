@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>placeholder - Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-typography">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+        <section class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+            <main class="base-main" id="baseMain" role="main">
+                <div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Plceholder</h1>
+				</div>
+
+                <h2 class="h2">placeholder 사용하는게 좋을까?</h2>
+
+                <section class="paragraph-a">
+                    <p>HTML5 부터 도입된 속성으로 input의 입력값에 대한 도움말(hint)로 사용되고 있다. <br>
+                    기존에는 input의 value 값에 미리 넣어두거나 input 위에 레이어로 띄워 표현을 하던 부분이라 무척이나 편리한 속성이다. <br>
+                    하지만 여기에 몇가지 문제점들이 있다.</p>
+
+                    <ul class="bul-dot">
+                        <li>자동 번역기능이 있는 브라우저에서는 이 속성은 번역이 되지 않는다.</li>
+                        <li>스크린리더기에서도 읽히지 않는다.</li>
+                        <li>입력 시 사라져 다시 입력의 도움말을 확인하기 위해서는 내용을 삭제해야지만 보이는 사용성에 문제가 있다.</li>
+                        <li>모바일이나 너비가 제한적인 곳에서는 내용이 길 경우에는 확인이 불가하다. </li>
+                    </ul>
+                </section>
+
+                <div class="in-wrap mgt-l">
+                    <div class="in-item" style="width:100px">
+                        <label class="lb-base" for="mem_이름">이름</label>
+                        <input type="text" id="mem_이름" vchecktype="kr" class="inp-base" value="" placeholder="한글로만 1자 이상 입력하세요." required >
+                    </div>
+                </div>
+                <div class="in-wrap mgt-l">
+                    <div class="in-item" style="width:100px">
+                        <label class="lb-base" for="mem_이름2">이름</label>
+                        <em class="placeholder">한글로만 1자 이상 입력하세요.</em>
+                        <input type="text" id="mem_이름2" vchecktype="kr" class="inp-base" value="" required >
+                    </div>
+                </div>
+                
+
+
+                
+                    
+            </main>
+        </div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+    <!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_02_09_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after');
+                $('input').on('blur', function(){
+                    var $this = $(this);
+
+                    $plugins.uiValueCheck({
+                        type: $this.attr('vchecktype'),
+                        target: $this,
+                        message: '정확하게 입력해주세요',
+                        callback: function(){ console.log(1111); }
+                    })
+                });
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

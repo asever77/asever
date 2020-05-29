@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-floating">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Floating</h1>
+				</div>
+				<p class="txt-s2">특정위치에서 고정되거나 고정되었던 오브젝트가 원위치로 돌아가는 설정</p>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">상단고정 → 원위치</h3>
+				<p>상단에 fixed로 고정에서 원위치로 들어가는 방식</p>
+				<div class="ui-floating" id="exeFix10">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">상단고정 → 원위치1</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix11">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">상단고정 → 원위치2</div>
+					</div>
+				</div>	
+				<div class="ui-floating" id="exeFix12">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">상단고정 → 원위치3</div>
+					</div>
+				</div>
+
+				<h3 class="h3">원위치 → 상단고정</h3>
+				<p>특정위치에 도달하면 원위치에서 벗어나 상단에 fixed로 고정되는 방식</p>
+				<div class="ui-floating" id="exeFix1">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 상단고정1</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix2">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 상단고정2</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix3">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 상단고정3</div>
+					</div>
+				</div>
+
+				<h3 class="h3">하단고정 → 원위치</h3>
+				<p>하단에 fixed로 고정에서 원위치로 들어가는 방식</p>
+				<div class="ui-floating" id="exeFix4">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">하단고정 → 원위치1</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix5">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">하단고정 → 원위치2</div>
+					</div>
+				</div>	
+				<div class="ui-floating" id="exeFix6">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">하단고정 → 원위치3</div>
+					</div>
+				</div>
+
+				<h3 class="h3">원위치 → 하단고정</h3>
+				<p>특정위치에 도달하면 원위치에서 벗어나 하단에 fixed로 고정되는 방식</p>
+				<div class="ui-floating" id="exeFix7">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 하단고정1</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix8">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 하단고정2</div>
+					</div>
+				</div>
+				<div class="ui-floating" id="exeFix9">
+					<div class="ui-floating-wrap">
+						<div class="tst-obj">원위치 → 하단고정3</div>
+					</div>
+				</div>
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"ui-floating"</span> <span class="na">id=</span><span class="s">"exeFix1"</span>&gt;
+	&lt;div <span class="na">class=</span><span class="s">"ui-floating-wrap"</span>&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiFloating</h3>
+				<h4 class="h4">상단고정 → 원위치</h4>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// add 로 불러올 요소는 미리 실행이 되야한다.(실행 순서가 중요.)</span>
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix12', ps:'bottom', fix:true</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix11', ps:'bottom', add:'exeFix12', fix:true</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix10', ps:'bottom', add:'exeFix11', fix:true</span> });
+</code>
+</pre>
+</div>
+				<h4 class="h4">원위치 → 상단고정</h4>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix1', ps:'top', fix:false</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix2', ps:'top', add:'exeFix1' fix:false</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix3', ps:'top', add:'exeFix2' fix:false</span> });
+</code>
+</pre>
+</div>
+			
+				<h4 class="h4">하단고정 → 원위치</h4>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// add 로 불러올 요소는 미리 실행이 되야한다.(실행 순서가 중요.)</span>
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix6', ps:'bottom', fix:true</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix5', ps:'bottom', add:'exeFix6', fix:true</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix4', ps:'bottom', add:'exeFix5', fix:true</span> });
+</code>
+</pre>
+</div>
+				<h4 class="h4">원위치 → 하단고정</h4>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix7', ps:'bottom', fix:false</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix8', ps:'bottom', add:'exeFix7', fix:false</span> });
+$plugins<span class="na">.uiFloating</span>({ <span class="s">id:'exeFix9', ps:'bottom', add:'exeFix8', fix:false</span> });
+</code>
+</pre>
+</div>	
+
+				<table class="tbl-base type-option" style="margin-bottom:100px">
+				<caption>옵션 설명</caption>
+				<colgroup>
+					<col class="n1">
+					<col class="n2">
+					<col class="n3">
+					<col class="n4">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">옵션명</th>
+						<th scope="col">유형</th>
+						<th scope="col">기본</th>
+						<th scope="col">설명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nec">
+						<th scope="row">id:</th>
+						<td>[string]</td>
+						<td>'name'</td>
+						<td>(필수) fix follow를 적용 시킬 영역(ui-floating)의 id 명</td>
+					</tr>
+					<tr>
+						<th scope="row">ps:</th>
+						<td>[string]</td>
+						<td>'top'</td>
+						<td>고정될 위치 설정
+							<ul>
+							<li>'top' : 상단</li>
+							<li>'bottom' : 하단</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">fix:</th>
+						<td>[boolean]</td>
+						<td>true</td>
+						<td>고정되어 시작할지 여부
+							<ul>
+							<li>true : 고정에서 기본</li>
+							<li>false : 기본에서 고정</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">add:</th>
+						<td>[string]</td>
+						<td>'name'</td>
+						<td>고정되어 있는 오브젝트가 이미 있다면 그위치 다음으로 위치하기 위해 해당 영역의 아이디명 </td>
+					</tr>
+					<tr>
+						<th scope="row">callback:</th>
+						<td>[function]</td>
+						<td>function</td>
+						<td>콜백값으로 아이디와 현재스크롤위치값, 상태변경 위치값</td>
+					</tr>
+				</tbody>
+				</table>
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+	
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_08_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.page.floating();
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

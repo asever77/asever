@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Memory - Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+
+	<style>
+		.test-unit div{display:block; background:#444; color:#ddd;}
+		.test-unit li{display:inline-block;margin:10px 10px 0 0; vertical-align: top}
+
+        [class*="test-"].n1{color:red}
+
+		.srch-area .inp-srch{width:200px;}
+	</style>
+</head>
+
+<body class="page-typography">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+        <div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+            <main class="base-main" id="baseMain" role="main">
+                <div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Memory</h1>
+				</div>
+
+				<div class="box-srch">
+					<div class="srch-area">
+						<input type="search" id="uiIssueSearch" class="inp-srch ui-inpcancel" value="" placeholder="검색어를 입력해주세요.">
+						<button type="button" class="btn-base" id="uiIssueSearchBtn">검색</button>
+					</div>
+				</div>
+
+                <div class="ui-bricklist mgt-m list-memory" role="list" id="uiBrickList1">
+					<ul class="ui-bricklist-wrap">
+						<li class="ui-bricklist-item" role="listitem">
+							<strong>if, for 구문등 {...}안에 함수작성 시 오류 발생</strong>
+                            <p>자바스크립트에서 'use strict' 모드일때 if, for 구문안에 함수를 작성하면 ie에서 오류 체크 됨. 함수는 구문 안에 작성안함.</p>
+                            <div class="list-memory-tag">
+                                <em>#자바스크립트</em> <em>#구문 오류</em>
+                            </div>
+						</li>					
+						<li class="ui-bricklist-item" role="listitem">
+							<strong>ie8에서 aria로 선택한 스크립트 변경사항을 바로 체크 못함</strong>
+                            <p>class로 같이 설정하여 변경해줘서 해결</p>
+                            <div class="list-memory-tag">
+                                <em>#ie8</em> <em>#aria</em> <em>#자바스크립트</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>아이프레임 안에 있는 전화번호 터치 시 IOS에서는 동작안하는 증상</strong>
+                            <p>아이프레임으로 인한 문제 발생으로 터치 시 부모창의 로케이션 링크값으로 해결<br>
+                            예) window.parent.loacation.href='tel:021234567';</p>
+                            <div class="list-memory-tag">
+                                <em>#ios</em> <em>#tel</em> <em>#iframe</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>z-index 값을 명확히 기입하자. </strong>
+                            <p>모바일환경에서 동작 시 값이 없는 경우 잔상이 생기는 경우가 있다.</p>
+                            <div class="list-memory-tag">
+                                <em>#모바일</em> <em>#z-index</em> <em>#잔상</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>파이어폭스 버튼 여백 생기는 문제발생 시</strong>
+                            <p>button::-moz-focus-inner{padding:0l birder:0}</p>
+                            <div class="list-memory-tag">
+                                <em>#파이어폭스</em> <em>#버튼</em> <em>#여백</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>placeholder 텍스트를 스크린리더에서 읽어주지 못함</strong>
+                            <div class="list-memory-tag">
+                                <em>#접근성</em> <em>#placeholder</em> <em>#스크린리더</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>[class^="name"].classname</strong>
+                            <p>html에서 정의된 class의 순서와 다르면 적용이 안되는 문제가 있다.<br>
+                            [class^="name"] 대신 [class*="name"] 로 하면 해결이 된다.</p>
+                            <div class="list-memory-tag">
+                                <em>#class</em> <em>#^=</em> <em>#순서</em>
+                            </div>
+						</li>
+                        <li class="ui-bricklist-item" role="listitem">
+							<strong>IE에서 개발자모드 오류날때</strong>
+                            <p>IE11-Windows6.1-KB2987107-x64 를 설치하면 된다.</p>
+                            <div class="list-memory-tag">
+                                <em>#ie</em> <em>#개발자모드</em>
+                            </div>
+						</li>
+					</ul>
+					
+				</div>
+
+
+            </main>
+        </div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+    <!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_04_01_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after');
+                $plugins.uiBrickList({ 
+                    id:'uiBrickList1', 
+                    margin:10, 
+                    response:true 
+                });
+
+
+		
+
+				if ($('#uiIssueSearch').val() !== '') {
+					var temp = $('.ui-bricklist-item *:contains('+ $('#uiIssueSearch').val() +')');
+
+					$('.ui-bricklist-item').addClass('disabled').hide();
+					$(temp).closest('.ui-bricklist-item').removeClass('disabled').show();
+				}
+				$.expr[":"].contains = $.expr.createPseudo(function(arg){
+					return function(elem) {
+						return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+					}
+				});
+				$('#uiIssueSearchBtn').on('click', function(){
+					searchAct();
+				});
+				$('#uiIssueSearch').on('keydown', function(e){
+					if (e.keyCode === $plugins.option.keys.enter) {
+						searchAct();
+					}
+				});
+
+				function searchAct(){
+					var k = $('#uiIssueSearch').val(),
+						temp = $('.ui-bricklist-item *:contains('+ k +')');
+
+					$('.ui-bricklist-item').addClass('disabled').hide();
+					$(temp).closest('.ui-bricklist-item').removeClass('disabled').show();
+
+					$plugins.uiBrickList({ 
+						id:'uiBrickList1', 
+						margin:10, 
+						response:true 
+					});
+				}
+
+				
+        
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

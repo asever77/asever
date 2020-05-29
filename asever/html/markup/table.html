@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>table - Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-table">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">테이블</h1>
+				</div>
+				
+				<h2 class="h2">기본 설정</h2>
+
+				<h3 class="h3">caption</h3>
+				<p>좀 더 자세하고 정확하게 표현하기 위해 strong 안에 테이블의 간략한 제목 기입과 p.ui-caption 태그안에는 자동으로 테이블의 모든 th의 항목텍스트를 기입하여 테이블을 설명합니다.<br>
+				예) 번호, 제목, 이름, 아이디, 날짜 정보입니다.</p>	
+				<div class="box-code">
+<pre>
+<code>
+&lt;caption&gt;
+&lt;strong&gt;테이블의 제목&lt;/strong&gt;
+&lt;p class="ui-caption"&gt;[자동으로 테이블의 th의 제목이 들어감]&lt;/p&gt;
+&lt;/caption&gt;
+</code>
+</pre>
+				</div>
+
+				<h3 class="h3">col</h3>
+				<p>col 스타일은 클래스로 사용하여 html 마크업과 css 스타일을 분리시킨다. <br>
+				게시판 목록형 테이블일 경우 col의 클래스명은 (번호)col-num, (이름)col-name 등 목적에 따른 명시형 네임으로 사용한다.<br>
+				제목 내용 형식의 테이블은 기본적으로 col-th, col-auto로 사용한다. </p>
+				<div class="box-code">
+<pre>
+<code>
+&lt;col class="col-th"&gt;
+&lt;col class="col-auto"&gt;
+&lt;colgroup span="2" class="col-auto"&gt;
+</code>
+</pre>
+				</div>
+				<table class="tbl-base type-discription">
+					<caption>class 예약어</caption>
+					<colgroup>
+					<col class="col-th">
+					<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">클래스명</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">.col-th</th>
+							<td>기본적인 행제목 크기 설정. 가이드설정에 따라 달라짐.</td>
+						</tr>
+						<tr>
+							<th scope="row">.col-auto</th>
+							<td>크기가 유동적일때 사용. 주로 col-th와 같이 사용.<br>
+								width="auto"
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">.col-[size]</th>
+							<td>기본적인 고정 사이즈로 % 기준으로 설정. 주로 콘텐츠 data형 테이블에 사용
+								<ul>
+									<li>.col-xxxs {width:5%}</li>
+									<li>.col-xxs {width:10%}</li>
+									<li>.col-xs {width:15%}</li>
+									<li>.col-s {width:20%}</li>
+									<li>.col-m {width:25%}</li>
+									<li>.col-l {width:30%}</li>
+									<li>.col-xl {width:35%}</li>
+									<li>.col-xxl {width:40%}</li>
+									<li>.col-xxxl {width:45%}</li>
+									<li>.col-half {width:50%}</li>
+								</ul>
+
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">.col-[name]</th>
+							<td>게시판형 목록 테이블에서 크기를 일정하게 사용하는 항목에 사용<br>
+								예) <br>
+								.col-name {width:100px} /* 이름, 성명 */<br>
+								.col-date {width:200px} /* yyyy-mm-dd 형의 날짜 */
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">scope="colgroup" &amp; colgroup</h3>
+				<p>scope="colgroup" 열그룹은 colgroup 범위안에서 그룹핑을 한다. 사용 시 colgroup으로 영역 구분.</p>
+				<div class="box-code">
+<pre>
+<code>
+&lt;colgroup span="3" class="col-auto"&gt;
+&lt;colgroup span="3" class="col-auto"&gt;
+....
+&lt;tr&gt;
+	&lt;th scope="colgroup"&gt;열그룹 A&lt;/th&gt;
+	&lt;td&gt;열그룹 A-1&lt;/td&gt;
+	&lt;td&gt;열그룹 A-2&lt;/td&gt;
+	&lt;th scope="colgroup"&gt;열그룹 B&lt;/th&gt;
+	&lt;td&gt;열그룹 B-1&lt;/td&gt;
+	&lt;td&gt;열그룹 B-2&lt;/td&gt;
+&lt;/tr&gt;
+</code>
+</pre>
+				</div>
+
+				<h3 class="h3">scope="rowgroup" &amp; tbody</h3>
+				<p>scope="rowgroup" 행그룹은 tbody 범위안에서 그룹핑을 한다. 사용 시 tbody으로 영역 구분.</p>
+				<div class="box-code">
+<pre>
+<code>
+&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope="rowgroup"&gt;행그룹 A&lt;/th&gt;
+		&lt;td&gt;행그룹 A-1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;행그룹 A-2&lt;/td&gt;
+		&lt;td&gt;행그룹 A-3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;
+		&lt;th scope="rowgroup"&gt;행그룹 B&lt;/th&gt;
+		&lt;td&gt;행그룹 B-1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;행그룹 B-2&lt;/td&gt;
+		&lt;td&gt;행그룹 B-3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/tbody&gt;
+</code>
+</pre>
+				</div>
+				
+				<h2 class="h2">테이블 유형</h2>
+				<h3 class="h3">목록형</h3>
+				<p>일반적인 게시판 목록 유형의 테이블.</p>
+				<table class="tbl-base txt-c">
+					<caption>
+						<strong>기본 테이블</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<col class="col-num">
+					<col class="col-auto">
+					<col class="col-name">
+					<col class="col-id">
+					<col class="col-date">
+					<thead>
+						<tr>
+							<th scope="col">번호</th>
+							<th scope="col">제목</th>
+							<th scope="col">이름</th>
+							<th scope="col">아이디</th>
+							<th scope="col">날짜</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="4">내용이 없습니다.</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td class="txt-l">제목이 들어가는 공간입니다.</td>
+							<td>이순신</td>
+							<td>lss</td>
+							<td>2018.03.20</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td class="txt-l">제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다.</td>
+							<td>이순신</td>
+							<td>lss</td>
+							<td>2018.03.20</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">정보 입력 및 확인형</h3>
+				<p>주로 입력 유형의 세로형 테이블로 (항목 + 정보) 형으로 대부분 thead 없이 tbody만 사용</p>
+				<table class="tbl-base-v txt-l">
+					<caption>
+						<strong>기본 테이블</strong>
+						<p class="ui-caption"></p>
+					</caption>
+					<colgroup>
+						<col class="col-th">
+						<col class="col-auto">
+					</colgroup>
+					<colgroup>
+						<col class="col-th">
+						<col class="col-auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">이름</th>
+							<td>유쾌한</td>
+							<th scope="row">아이디</th>
+							<td>joyc</td>
+						</tr>
+						<tr>
+							<th scope="row">날짜</th>
+							<td>2018.03.20</td>
+							<th scope="row">카드번호</th>
+							<td>4564654*******</td>
+						</tr>
+						<tr>
+							<th scope="row">주소</th>
+							<td colspan="3">서울시 강남구 강남동 578-545 강남 아파트 54556호<br>
+								586456
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<form id="fmField" name="fmField" action="" method="post">
+					<table class="tbl-base-v txt-l">
+						<caption>
+							<strong>기본 테이블</strong>
+							<p class="ui-caption"></p>
+						</caption>
+						<colgroup>
+							<col class="col-th">
+							<col class="col-auto">
+						</colgroup>
+						<colgroup>
+							<col class="col-th">
+							<col class="col-auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">이름</th>
+								<td><input class="inp-base" name="form_name" type="text" value="" placeholder="한글로 입력하세요."></td>
+								<th scope="row">아이디</th>
+								<td><input class="inp-base" name="form_id" type="text" value="" placeholder="영문으로 입력하세요."></td>
+							</tr>
+							<tr>
+								<th scope="row">날짜</th>
+								<td>
+									<input class="inp-mmdd" name="form_mm" maxlength="2" type="tel" value="" placeholder="MM"><span class="txt-mark-r">월</span>
+									<input class="inp-mmdd" name="form_dd" maxlength="2" type="text" value="" placeholder="DD"><span class="txt-mark-r">일</span>
+
+								</td>
+								<th scope="row"><label for="uiSelectCardNumber" class="lb-tit">카드번호</label></th>
+								<td>
+									<div class="ui-select type-card" >
+										<select title="카드번호 선택" id="uiSelectCardNumber">
+											<option>선택하세요</option>
+											<option value="1">신한카드 908*****2*5**</option>
+											<option value="2">시티카드 908*****2*5**</option>
+											<option value="3">현대카드 908*****2*5**</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">차종</th>
+								<td>
+									<fieldset role="group">
+										<legend>차종선택</legend>
+										<input type="checkbox" id="uiChk2" name="form_cartype">
+										<label class="lb-check all" for="uiChk2"><span>전체차종</span></label>
+										<input type="checkbox" id="uiChk2_1" checkgroup="uiChk2" name="form_cartype">
+										<label class="lb-check" for="uiChk2_1"><span>경형</span></label>
+										<input type="checkbox" id="uiChk2_2" checkgroup="uiChk2" name="form_cartype">
+										<label class="lb-check" for="uiChk2_2"><span>소형</span></label>
+										<input type="checkbox" id="uiChk2_3" checkgroup="uiChk2" name="form_cartype">
+										<label class="lb-check" for="uiChk2_3"><span>중형</span></label>
+									</fieldset>
+								</td>
+								<th scope="row">구분</th>
+								<td>
+									<input type="radio" name="form_ctg" id="r2_1">
+									<label class="lb-radio" for="r2_1"><span>공인인증</span></label>
+									<input type="radio" name="form_ctg" id="r2_2">
+									<label class="lb-radio" for="r2_2"><span>카드인증</span></label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">날짜</th>
+								<td colspan="3">
+									<div class="ui-datepicker">
+										<input class="inp-date" name="form_date_s" type="tel" value="2018-03-17" data-min="2016-10-05" data-max="2019-12-01" title="날짜" id="uiDatePck1_inp">
+										<button type="button" class="btn-base ui-drop ui-datepicker-btn" data-inp="uiDatePck1_inp" id="uiDatePck1"><span>달력</span></button>
+										<div class="ui-drop-pnl ui-datepicker-wrap" aria-hidden="true" data-id="uiDatePck1" id="uiDatePck1_pnl"></div>
+									</div>
+									<span class="txt-mark">~</span>
+									<div class="ui-datepicker">
+										<input class="inp-date" name="form_date_e" type="tel" value="2018-03-20" data-min="2016-10-05" data-max="2019-12-01" title="날짜" id="uiDatePck2_inp">
+										<button type="button" class="btn-base ui-drop ui-datepicker-btn" data-inp="uiDatePck2_inp" id="uiDatePck2"><span>달력</span></button>
+										<div class="ui-drop-pnl ui-datepicker-wrap" aria-hidden="true" data-id="uiDatePck2" id="uiDatePck2_pnl"></div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">주소</th>
+								<td colspan="3"><textarea name="form_address" class="inp-tarea" placeholder="100글자 이내로 입력하세요."></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+				
+				<h2 class="h2">scroll Table</h2>
+				<p>thead 고정, tbody 영역 스크롤 정보성 테이블</p>
+				<div class="tbl-scroll ui-tblscroll" id="uiTblSroll1">
+					<div class="tbl-scroll-tbody">
+						<table class="tbl-base txt-c">
+							<caption>
+								<strong>기본 테이블</strong>
+								<p class="ui-caption"></p>
+							</caption>
+							<colgroup>
+							<col class="col-num">
+							<col class="col-auto">
+							<col class="col-name">
+							<col class="col-id">
+							<col class="col-date">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">이름</th>
+									<th scope="col">아이디</th>
+									<th scope="col">날짜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="txt-l">제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+									<td>2018.03.20</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="tbl-scroll ui-tblscroll">
+					<div class="tbl-scroll-tbody">
+						<table class="tbl-base txt-c">
+							<caption>
+								<strong>기본 테이블</strong>
+								<p class="ui-caption"></p>
+							</caption>
+							<colgroup>
+							<col class="col-num">
+							<col class="col-auto">
+							<col class="col-name">
+							<col class="col-id">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">이름</th>
+									<th scope="col">아이디</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="txt-l">제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="txt-l">제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다. 제목이 길게 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="txt-l">제목이 들어가는 공간입니다.</td>
+									<td>이순신</td>
+									<td>lss</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<h2 class="h2">Fix Table</h2>
+				<p>특정 col 고정하여 col수가 많은 data 테이블일 경우 사용</p>
+				<div class="ui-fixtd" fix="3">
+					<table class="tbl-base txt-c">
+						<caption>
+							<strong>기본 테이블</strong>
+							<p class="ui-caption"></p>
+						</caption>
+						<colgroup>
+						<col class="col-1">
+						<col class="col-2">
+						<col class="col-3">
+						<col class="col-4">
+						<col class="col-4">
+						<col class="col-4">
+						<col class="col-4">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">고정영역 1</th>
+								<th scope="col">고정영역 2</th>
+								<th scope="col">고정영역 3</th>
+								<th scope="col">가변영역 1</th>
+								<th scope="col">가변영역 2</th>
+								<th scope="col">가변영역 3</th>
+								<th scope="col">가변영역 4</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">고정내용 1</th>
+								<th scope="row">고정내용 2</th>
+								<th scope="row">고정내용 3</th>
+								<td>2018.03.20</td>
+								<td>2018.03.21</td>
+								<td>2018.03.22</td>
+								<td>2018.03.23</td>
+							</tr>
+							<tr>
+								<th scope="row">고정내용 1</th>
+								<th scope="row">고정내용 2</th>
+								<th scope="row">고정내용 3</th>
+								<td>2018.03.20</td>
+								<td>2018.03.21</td>
+								<td>2018.03.22</td>
+								<td>2018.03.23</td>
+							</tr>
+							<tr>
+								<th scope="row">고정내용 1</th>
+								<th scope="row">고정내용 2</th>
+								<th scope="row">고정내용 3</th>
+								<td>2018.03.20</td>
+								<td>2018.03.21</td>
+								<td>2018.03.22</td>
+								<td>2018.03.23</td>
+							</tr>
+							<tr>
+								<th scope="row">고정내용 1</th>
+								<th scope="row">고정내용 2</th>
+								<th scope="row">고정내용 3</th>
+								<td>2018.03.20</td>
+								<td>2018.03.21</td>
+								<td>2018.03.22</td>
+								<td>2018.03.23</td>
+							</tr>
+							<tr>
+								<th scope="row">고정내용 1</th>
+								<th scope="row">고정내용 2</th>
+								<th scope="row">고정내용 3</th>
+								<td>2018.03.20</td>
+								<td>2018.03.21</td>
+								<td>2018.03.22</td>
+								<td>2018.03.23</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_02_05_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiTblScroll();
+				$plugins.uiTblScroll({ selector:'#uiTblSroll1',rown:4, customscroll:true });
+
+				$plugins.uiTblFixTd();
+				
+				$plugins.uiDatePicker();
+				$plugins.uiSelection();
+				$plugins.uiSelect();
+				$plugins.uiSelection({ id:'uiChk2', all:true });
+				
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

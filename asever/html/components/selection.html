@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-selection">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain">
+					
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit"></h1>
+				</div>
+				<p class="txt-s2">Radio button, checkbox 디자인 적용 시 사용</p>
+
+				<h2 class="h2">Examples</h2>
+				<h3 class="h3">Radio <small>(Single selection controls)</small></h3>
+				<fieldset role="radiogroup">
+					<legend>인증선택</legend>
+					<input type="radio" name="r2" id="r2_1" checked>
+					<label class="lb-radio" for="r2_1"><span>공인인증</span></label>
+					<input type="radio" name="r2" id="r2_2">
+					<label class="lb-radio" for="r2_2"><span>카드인증</span></label>
+					<input type="radio" name="r2" id="r2_3" disabled>
+					<label class="lb-radio" for="r2_3"><span>I-PIN인증</span></label>
+				</fieldset>
+				<div role="radiogroup" aria-labelledby="ariaCtgSel">
+					<strong id="ariaCtgSel" class="hide">구분선택: </strong>
+					<input type="radio" name="r3" id="r3_1" checked>
+					<label class="lb-radio" for="r3_1"><span>일반용</span></label>
+					<input type="radio" name="r3" id="r3_2">
+					<label class="lb-radio" for="r3_2"><span>영업용</span></label>
+					<input type="radio" name="r3" id="r3_3">
+					<label class="lb-radio" for="r3_3"><span>장애용</span></label>
+
+					<button type="button" class="btn-base" onclick="$plugins.uiSelectionChange({ id:'r3_3', checked:true })"><span>checked 설정</span></button>
+					<button type="button" class="btn-base" onclick="$plugins.uiSelectionChange({ id:'r3_2', disabled:true })"><span>disabled 설정</span></button>
+				</div>
+
+				<h3 class="h3">checkbox <small>(Multi selection controls)</small></h3>
+				<fieldset role="group">
+					<legend>연료선택</legend>
+					<input type="checkbox" id="c1_1" checked>
+					<label class="lb-check" for="c1_1" ><span>가솔린</span></label>
+					<input type="checkbox" id="c1_2">
+					<label class="lb-check" for="c1_2"><span>디젤</span></label>
+					<input type="checkbox" id="c1_3" disabled="disabled">
+					<label class="lb-check" for="c1_3"><span>LPG</span></label>
+					<input type="checkbox" id="c1_4" disabled="disabled" checked="checked">
+					<label class="lb-check" for="c1_4"><span>하이브리드</span></label>
+
+					<button type="button" class="btn-base" onclick="$plugins.uiSelectionChange({ id:'c1_3', checked:true })"><span>checked 설정</span></button>
+					<button type="button" class="btn-base" onclick="$plugins.uiSelectionChange({ id:'c1_4', disabled:false })"><span>disabled 설정</span></button>
+				</fieldset>
+
+				<fieldset role="group">
+					<legend>차종선택</legend>
+						<input type="checkbox" id="uiChk2">
+						<label class="lb-check all" for="uiChk2"><span>전체차종</span></label>
+						<input type="checkbox" id="uiChk2_1" checkgroup="uiChk2">
+						<label class="lb-check" for="uiChk2_1"><span>경형</span></label>
+						<input type="checkbox" id="uiChk2_2" checkgroup="uiChk2">
+						<label class="lb-check" for="uiChk2_2"><span>소형</span></label>
+						<input type="checkbox" id="uiChk2_3" checkgroup="uiChk2" checked>
+						<label class="lb-check" for="uiChk2_3"><span>중형</span></label>
+						
+				</fieldset>
+				<fieldset role="group">
+					<legend>약관동의 선택</legend>
+					<input type="checkbox" id="c3_0">
+					<label class="lb-check all" for="c3_0"><span>개인(신용)정보 선택 동의</span></label>
+					<br>
+					<input type="checkbox" id="c3_1" checkgroup="c3_0">
+					<label class="lb-check" for="c3_1"><span>개인정보 필수적 제공</span></label>
+					<br>
+					<input type="checkbox" id="c3_2" checkgroup="c3_0">
+					<label class="lb-check" for="c3_2"><span>개인(신용)정보 선택적 수집,이용</span></label>
+					<br>
+					<input type="checkbox" id="c3_3" checkgroup="c3_0">
+					<label class="lb-check" for="c3_3"><span>(1)금융거래관련 상품서비스 안내를 위한 수집∙이용</span></label>
+					<br>
+					<input type="checkbox" id="c3_4" checkgroup="c3_0">
+					<label class="lb-check" for="c3_4"><span>(2)기타 부수서비스 안내 등을 위한 수집·이용</span></label>
+					<div id="abcd" style="margin:1.0rem 0">
+						<input type="checkbox" id="c4_4" disabled="disabled">
+						<label class="lb-check" for="c4_4"><span>전화</span></label>
+						<input type="checkbox" id="c4_5" disabled="disabled">
+						<label class="lb-check" for="c4_5"><span>SMS</span></label>
+						<input type="checkbox" id="c4_6" disabled="disabled">
+						<label class="lb-check" for="c4_6"><span>이메일/앱 푸쉬</span></label>
+						<input type="checkbox" id="c4_7" disabled="disabled">
+						<label class="lb-check" for="c4_7"><span>서면</span></label>
+					</div>
+				</fieldset>
+
+
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">Radio</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;input <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"r2"</span> <span class="na">id=</span><span class="s">"r2_1"</span>&gt;
+&lt;label <span class="na">class=</span><span class="s">"lb-radio"</span> <span class="na">for=</span><span class="s">"r2_1"</span>&gt;&lt;span&gt;선택&lt;/span&gt;&lt;/label&gt;
+</code>
+</pre>
+</div>
+				<h3 class="h3">Checkbox</h3>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// base checkbox</span>
+&lt;input <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"c1_1"</span>&gt;
+&lt;label <span class="na">class=</span><span class="s">"lb-check"</span> <span class="na">for=</span><span class="s">"c1_1"</span>&gt;&lt;span&gt;선택&lt;/span&gt;&lt;/label&gt;
+
+<span class="c">// all checkbox (전체체크의 그룹 체크박스에 전체체크의 id값의 class추가)</span>
+&lt;input <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"c2_0"</span>&gt;
+&lt;label <span class="na">class=</span><span class="s">"lb-check"</span> <span class="na">for=</span><span class="s">"c2_0"</span>&gt;&lt;span&gt;전체체크&lt;/span&gt;&lt;/label&gt;
+&lt;input <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"c2_1"</span> <span class="na">checkgroup=</span><span class="s">"c2_0"</span>&gt;
+&lt;label <span class="na">class=</span><span class="s">"lb-check"</span> <span class="na">for=</span><span class="s">"c2_1"</span>&gt;&lt;span&gt;선택1&lt;/span&gt;&lt;/label&gt;
+&lt;input <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"c2_2"</span> <span class="na">checkgroup=</span><span class="s">"c2_0"</span>&gt;
+&lt;label <span class="na">class=</span><span class="s">"lb-check"</span> <span class="na">for=</span><span class="s">"c2_2"</span>&gt;&lt;span&gt;선택2&lt;/span&gt;&lt;/label&gt;
+</code>
+</pre>
+</div>
+					
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiSelection</h3>
+<div class="box-code">
+<pre>
+<code>
+<span class="c">// 전체실행</span>
+$plugins<span class="na">.uiSelection</span>();
+
+<span class="c">// 특정 아이디 실행</span>
+$plugins<span class="na">.uiSelection</span>({ <span class="s">
+	id:'name', 
+	all:true, 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>생략 시 기본적인 type="radio" 와 type="checkbox" 전체에 반영</td>
+						</tr>
+						<tr>
+							<th scope="row">all:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>오직 체크박스에서만 사용
+								<ul>
+								<li>true : 체크박스 전체 체크 기능을 사용</li>
+								<li>false : 사용안함</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 체크상태 값</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiDisabled</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiDisabled</span>({ <span class="s">
+	id:'name', 
+	disabled:true, 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>생략 시 기본적인 type="radio" 와 type="checkbox" 전체에 반영</td>
+						</tr>
+						<tr>
+							<th scope="row">disabled:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>disabled 상태 설정
+								<ul>
+								<li>true : 선택불가상태</li>
+								<li>false : 선택가능상태</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 체크상태 값</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiChecked</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiChecked</span>({ <span class="s">
+	id:'name', 
+	checked:true, 
+	callback:function(v){...}</span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-xs">
+						<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>생략 시 기본적인 type="radio" 와 type="checkbox" 전체에 반영</td>
+						</tr>
+						<tr>
+							<th scope="row">checked:</th>
+							<td>[boolean]</td>
+							<td>false</td>
+							<td>checked 상태 설정
+								<ul>
+								<li>true : 체크상태</li>
+								<li>false : 미체크상태</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">callback:</th>
+							<td>[function]</td>
+							<td>function</td>
+							<td>콜백값으로 아이디와 체크상태 값</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_17_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.uiSelection();
+					$plugins.uiSelection({ id:'uiChk2', all:true, callback:allCheckCallback });
+					$plugins.uiSelection({ id:'c3_0', all:true, callback:allCheckCallback });
+					$plugins.uiSelection({ id:'c3_4', callback:inpCheckCallback });
+					$plugins.uiSelection();
+					
+					function allCheckCallback(v){
+						console.log(v.id, v);
+					}
+
+					function inpCheckCallback(v){
+						console.log(v)
+						if (v.value) {
+							$('#abcd input').prop('disabled', false).prop('checked', true).removeAttr('disabled');
+							$('#abcd label').removeClass('disabled').addClass('checked');
+						} else {
+							$('#abcd input').prop('disabled', true).prop('checked', false).attr('disabled');
+							$('#abcd label').removeClass('checked').addClass('disabled');
+						}
+					}
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

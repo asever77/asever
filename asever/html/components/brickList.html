@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+</head>
+
+<body class="page-listcard">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+	
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">벽돌 리스트</h1>
+				</div>
+				<p class="txt-s2">벽돌을 쌓아 올리듯 비어있는 공간이 없이 정렬시키는 리스트이다.<br>
+				가로 길이를 동일한 길이로 기준으로 맞추어 정리되며 옵션에서 margin 값으로 간격조절이 가능하다.</p>
+
+				<h2 class="h2">Examples</h2>
+				<div class="ui-bricklist mgt-m" role="list" id="uiBrickList1">
+					<ul class="ui-bricklist-wrap">
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu1.jpg" alt=""></div>
+						</li>					
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu2.jpg" alt=""></div>
+						</li>					
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu3.jpg" alt=""></div>
+						</li>						
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu4.jpg" alt=""></div>
+						</li>
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu5.jpg" alt=""></div>
+						</li>
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu6.jpg" alt=""></div>
+						</li>
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu7.jpg" alt=""></div>
+						</li>
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu8.jpg" alt=""></div>
+						</li>
+						<li class="ui-bricklist-item" role="listitem">
+							<div><img src="/vanilla/resources/img/dummy/@iu9.jpg" alt=""></div>
+						</li>
+					</ul>
+					
+					<button type="button" class="btn-base ui-add mgt-m">추가</button>
+				</div>
+				<h2 class="h2">HTML Structure</h2>
+				<h3 class="h3">basic type</h3>
+<div class="box-code">
+<pre>
+<code>
+&lt;div class="ui-bricklist" role="list" id="uiBrickList1"&gt;
+	&lt;ul class="ui-bricklist-wrap"&gt;
+		&lt;li class="ui-bricklist-item" role="listitem"&gt;
+			&lt;div&gt;&lt;img src="/vanilla/resources/img/dummy/@iu1.jpg" alt=""&gt;&lt;/div&gt;
+			&lt;strong&gt;title&lt;/strong&gt;
+		&lt;/li&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">$plugins.uiBrickList</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiBrickList</span>({ <span class="s">
+	id:'uiBrickList1', 
+	margin:10, 
+	response:true </span> 
+});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-bricklist의 아이디명 기입</td>
+						</tr>
+						<tr>
+							<th scope="row">margin:</th>
+							<td>[number]</td>
+							<td>10</td>
+							<td>item간의 간격</td>
+						</tr>
+						<tr>
+							<th scope="row">response:</th>
+							<td>[boolean]</td>
+							<td>true</td>
+							<td>resize 시 재구성여부</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<h3 class="h3">$plugins.uiBrickListAdd</h3>
+				<p>동적으로 추가되는 리스트가 있을 경우 사용</p>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na">.uiBrickListAdd</span>({ <span class="s">
+	id:'uiBrickList1'</span> 
+});
+</code>
+</pre>
+</div>			
+				<table class="tbl-base type-option">
+					<caption>옵션 설명</caption>
+					<colgroup>
+						<col class="n1">
+						<col class="n2">
+						<col class="n3">
+						<col class="n4">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">옵션명</th>
+							<th scope="col">유형</th>
+							<th scope="col">기본</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="nec">
+							<th scope="row">id:</th>
+							<td>[string]</td>
+							<td>'name'</td>
+							<td>(필수) ui-bricklist의 아이디명 기입</td>
+						</tr>
+					</tbody>
+				</table>
+			</main>
+		</div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+	<!-- script -->
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.global.js"></script>
+	<script src="/vanilla/resources/js/ui.common.js"></script>
+
+	<script src="/vanilla/resources/js/ui.plugins.menu.js"></script>
+	<script src="/vanilla/resources/js/ui.plugins.bricklist.js"></script>
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before');
+			$plugins.common.pageid = 'G_03_02_00_00';
+			
+			$(doc).ready(function(){
+				console.log('page ready after')
+				//$('.ui-cardlist').imagesLoaded(function(){
+					$plugins.uiBrickList({ id:'uiBrickList1', margin:0, response:true });
+				//});
+				var img_array = [
+					"/vanilla/resources/img/dummy/@iu16.gif",
+					"/vanilla/resources/img/dummy/@iu15.jpg",
+					"/vanilla/resources/img/dummy/@iu14.jpg",
+					"/vanilla/resources/img/dummy/@iu13.gif",
+					"/vanilla/resources/img/dummy/@iu12.jpg",
+					"/vanilla/resources/img/dummy/@iu11.gif",
+					"/vanilla/resources/img/dummy/@iu10.gif",
+					"/vanilla/resources/img/dummy/@iu9.jpg",
+					"/vanilla/resources/img/dummy/@iu8.jpg",
+					"/vanilla/resources/img/dummy/@iu7.jpg"
+					]
+				function randomNum(){
+					var n = Math.floor(Math.random() * 10);
+					return n;
+				}
+
+				
+				$('.ui-bricklist .ui-add').on('click', function() {
+					var add = '<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>' +
+						'<li class="ui-bricklist-item" role="listitem">' +
+						'<div><img src="'+ img_array[randomNum()] +'" alt=""></div>' +
+						'</li>';
+
+					$(this).closest('.ui-bricklist').find('.ui-bricklist-wrap').append(add);
+					$plugins.uiBrickListAdd({ id:'uiBrickList1' });
+				});
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

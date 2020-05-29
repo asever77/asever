@@ -1,0 +1,20 @@
+<section class="ui-modal" id="modal_sample" role="dialog" aria-hidden="true">
+    <div class="ui-modal-wrap">
+        <header class="ui-modal-tit">
+            <h1>Ajax Modal</h1>
+        </header>
+        <div class="ui-modal-cont">
+            <a href="#">링크</a>
+            <p>기본적인 레이어팝업 스타일</p>
+            <p>width, height 값은 콘텐츠 내용에 따라 자동으로 설정</p>
+            <img src="/vanilla/resources/img/dummy/project_6.png" alt=""><br>
+            <img src="/vanilla/resources/img/dummy/project_5.png" alt=""><br>
+            <img src="/vanilla/resources/img/dummy/project_4.png" alt=""><br>
+            <p>특정 크기 값을 줄수도 있음.</p>
+        </div>
+        <div class="ui-modal-foot">
+            <button type"button" class="btn-base" onclick="$plugins.uiModalClose({ id:'modal_sample', callback:function(){ console.log('확인ㄴ'); } });">확인</button>
+        </div>
+        <button type="button" class="ui-modal-close btn-close" aria-label="close" >닫기</button>
+    </div>
+</section>

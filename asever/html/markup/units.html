@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>units - Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+
+	<style>
+		.test-unit div{display:block; background:#444; color:#ddd;}
+		.test-unit li{display:inline-block;margin:10px 10px 0 0; vertical-align: top}
+	</style>
+</head>
+
+<body class="page-typography">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+        <div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+            <main class="base-main" id="baseMain" role="main">
+                <div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit">Units</h1>
+				</div>
+
+                <h2 class="h2">CSS 단위</h2>
+
+                <h3 class="h3">절대 단위</h3>
+                <table class="tbl-base type-discription">
+					<caption>class 예약어</caption>
+					<colgroup>
+					<col class="col-th">
+					<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">단위</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">cm</th>
+							<td>centimeters</td>
+						</tr>
+						<tr>
+							<th scope="row">mm</th>
+							<td>millimeters</td>
+						</tr>
+						<tr>
+							<th scope="row">in</th>
+							<td>inches (1in = 96px = 2.54cm)</td>
+						</tr>
+						<tr>
+							<th scope="row">px</th>
+							<td>pixels (1px = 1/96th of 1in) 저해상도와 고해상도에서 1px의 정의가 달라진다.</td>
+						</tr>
+                        <tr>
+							<th scope="row">pt</th>
+							<td>points (1pt = 1/72 of 1in)</td>
+						</tr>
+                        <tr>
+							<th scope="row">pc</th>
+							<td>picas (1pc = 12 pt)</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="test-unit" >
+					<li>
+						<p>100px</p>
+						<div style="width:100px; height:100px;"></div>
+					</li>
+					<li>
+						<p>75pt</p>
+						<div style="width:75pt; height:75pt;"></div>
+					</li>
+					<li>
+						<p>6.25pc</p>
+						<div style="width:6.25pc; height:6.25pc;"></div>
+					</li>
+					<li>
+						<p>2.646cm</p>
+						<div style="width:2.646cm; height:2.646cm;"></div>
+					</li>
+					<li>
+						<p>26.46mm</p>
+						<div style="width:26.46mm; height:26.46mm;"></div>
+					</li>
+					<li>
+						<p>1.0417in</p>
+						<div style="width:1.0417in; height:1.0417in;"></div>
+					</li>
+				</ul>
+				<ul class="test-unit in-wrap" >
+					<li class="in-item">
+						<p>1in</p>
+						<div style="width:1in; height:1in;"></div>
+					</li>
+					<li class="in-item">
+						<p>96px</p>
+						<div style="width:96px; height:96px;"></div>
+					</li>
+					<li class="in-item">
+						<p>72pt</p>
+						<div style="width:72pt; height:72pt;"></div>
+					</li>
+					<li class="in-item">
+						<p>6pc</p>
+						<div style="width:6pc; height:6pc;"></div>
+					</li>
+					<li class="in-item">
+						<p>2.54cm</p>
+						<div style="width:2.54cm; height:2.54cm;"></div>
+					</li>
+					<li class="in-item">
+						<p>25.4mm</p>
+						<div style="width:25.4mm; height:25.4mm;"></div>
+					</li>
+					
+				</ul>
+
+                <h3 class="h3">font size 상대 단위</h3>
+                <table class="tbl-base type-discription">
+					<caption>class 예약어</caption>
+					<colgroup>
+					<col class="col-th">
+					<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">단위</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">em</th>
+							<td>요소의 글꼴 크기(대문자)에 상대적인 값(2em이란 현재 글꼴의 2배)</td>
+						</tr>
+						<tr>
+							<th scope="row">ex</th>
+							<td>x(소문자)의 높이의 상대적인 값</td>
+						</tr>
+						<tr>
+							<th scope="row">ch</th>
+							<td>'0'의 너비에 상대적인 값</td>
+						</tr>
+						<tr>
+							<th scope="row">rem</th>
+							<td>root 요소(html)의 글꼴 크기(대문자)에 상대적인 값(12px 기준으로 62.5% 지정)</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="test-unit in-wrap" >
+					<li class="in-item">
+						<p>10em</p>
+						<div style="width:10em; height:10em; font-size:12px;">A</div>
+					</li>
+					<li class="in-item">
+						<p>10ex</p>
+						<div style="width:10ex; height:10ex; font-size:12px; ">x</div>
+					</li>
+					<li class="in-item">
+						<p>10ch</p>
+						<div style="width:10ch; height:10ch; font-size:12px; ">0</div>
+					</li>
+					<li class="in-item">
+						<p>10rem</p>
+						<div style="width:10rem; height:10rem; font-size:12px;"></div>
+					</li>
+				</ul>
+
+				<h3 class="h3">browser size 상대 단위</h3>
+                <table class="tbl-base type-discription">
+					<caption>class 예약어</caption>
+					<colgroup>
+					<col class="col-th">
+					<col class="col-auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">단위</th>
+							<th scope="col">설명</th>
+						</tr>
+					</thead>
+					<tbody class="line-t">
+                        <tr>
+							<th scope="row">vw</th>
+							<td>브라우저 창 너비 1%</td>
+                        </tr>
+                        <tr>
+							<th scope="row">vh</th>
+							<td>브라우저 창 높이 1%</td>
+						</tr>
+                        <tr>
+							<th scope="row">vmin</th>
+							<td>브라우저 창 높이와 너비의 최소값 1%</td>
+						</tr>
+                        <tr>
+							<th scope="row">vmax</th>
+							<td>브라우저 창 높이와 너비의 최대값 1%</td>
+						</tr>
+                        <tr>
+							<th scope="row">%</th>
+							<td>부모요소 기준의 비율</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="test-unit in-wrap" >
+					<li class="in-item">
+						<p>10vw</p>
+						<div style="width:10vw; height:10vw;"></div>
+					</li>
+					<li class="in-item" style="width:10%; height:10%; padding-bottom:10%">
+						<p>10%</p>
+						<div style="width:100%; height:100%; padding-bottom:100%"></div>
+					</li>
+					<li class="in-item">
+						<p>10vh</p>
+						<div style="width:10vh; height:10vh;"></div>
+					</li>
+					<li class="in-item">
+						<p>10vmax</p>
+						<div style="width:10vmax; height:10vmax;"></div>
+					</li>
+					<li class="in-item">
+						<p>10vmin</p>
+						<div style="width:10vmin; height:10vmin;"></div>
+					</li>
+					
+				</ul>
+				
+
+				<div class="ex1" style="width:1cm; height:1cm;"></div>
+               
+                    
+            </main>
+        </div>
+		<footer class="base-footer" id="baseFooter"></footer>
+	</div>
+
+    <!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_02_08_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

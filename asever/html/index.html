@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>UI Development Group</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-main">
+	<div class="main-bg">
+		<div class="main-bg-item">
+			<a href="/vanilla/html/start/introduction.html">
+				<img src="/vanilla/resources/img/common/ui_development_group.png" alt="UI Development Group">
+			</a>
+		</div>
+		<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/X6dJEAs0-Gk?autoplay=1&amp;enablejsapi=1&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;playlist=X6dJEAs0-Gk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		<div class="main-bg-vod">
+			<iframe id="mainBg" width="100%" height="100%" src="https://www.youtube.com/embed/X6dJEAs0-Gk?autoplay=1&amp;enablejsapi=1&amp;&mute=1&amp;&volumn=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;playlist=E7_eqaZHhns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+		</div>
+		<!-- 
+		X6dJEAs0-Gk
+		s22ViV7tBKE
+		NXdbhBA7Kfg 
+		E7_eqaZHhns
+		ga0i8ZMnkIY
+		iGpuQ0ioPrM
+		Ki-mRTL40eU
+		LmT-1sEHuRc
+		CbrFOgZuXUs
+		f1LJmh4tWaQ
+		2XX5zDThC3U
+		SN86yN3SWz4
+		64Yo1Rz2b40
+		-->
+	</div>
+
+	<div class="main-bg-m">
+		<div class="main-bg-item">
+			<a href="/vanilla/html/start/introduction.html">
+				<img src="/vanilla/resources/img/common/ui_development_group_m.png" alt="UI Development Group">
+			</a>
+		</div>
+		<div class="main-bg-img">
+			<img src="/vanilla/resources/img/common/bg_space.jpg" alt="">
+		</div>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$(doc).ready(function(){
+				$plugins.common.pageid = 'G_00_00_00_00';
+				console.log('page ready after')
+
+				var bgv = ['X6dJEAs0-Gk', 's22ViV7tBKE', 'NXdbhBA7Kfg',  'E7_eqaZHhns', 'iGpuQ0ioPrM', 'Ki-mRTL40eU', 'LmT-1sEHuRc', 'CbrFOgZuXUs', 'f1LJmh4tWaQ', '2XX5zDThC3U', 'SN86yN3SWz4', '64Yo1Rz2b40'],
+					rdn =  randomRange(0, bgv.length - 1 );
+				
+				console.log(bgv.length);
+
+
+				$('#mainBg').attr('src','https://www.youtube.com/embed/' + bgv[randomRange(0, bgv.length - 1 )] + '?autoplay=1&amp;enablejsapi=1&amp;&mute=1&amp;&volumn=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;playlist=' + bgv[randomRange(0, bgv.length - 1 )] + ', ' + bgv[randomRange(0, bgv.length - 1 )] + ', ' + bgv[randomRange(0, bgv.length - 1 )] + ', ' + bgv[randomRange(0, bgv.length - 1 )] + ', ' + bgv[randomRange(0, bgv.length - 1 )]);
+
+				function randomRange(n1, n2) {
+					return Math.floor( (Math.random() * (n2 - n1 + 1)) + n1 );
+				}
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>

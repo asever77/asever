@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+
+	<title>Netive UI</title>
+
+	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+
+	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/vanilla/resources/js/ui.base.js"></script>
+</head>
+
+<body class="page-codinglist">
+	<div class="base-skip" id="baseSkip"></div>
+	<div class="base-layer" id="baseLayer"></div>
+	<div class="base-wrap" id="baseWrap">
+		<header class="base-header" id="baseHeader"></header>
+		<div class="base-body" id="baseBody">
+			<aside class="base-aside" id="baseAside"></aside>
+			<main class="base-main" id="baseMain" role="main">
+				
+				<div class="tit-wrap">
+					<h1 class="h1" id="uiPageTit"></h1>
+				</div>
+				<p class="txt-s2">IA엑셀 문서 기준으로 만들어진 json파일형식의 엑셀에서 변환한 json파일로 자동 생성 관리<br>
+				일정관리를 엑셀문서로 진행하여 공유</p>
+
+				<h2 class="h2">Examples</h2>
+				<div class="ui-codinglist" id="uiCodinglist"></div>
+				<h3 class="h3">코딩 리스트 excel</h3>
+				<p>IA엑셀 문서에서 필요한 정보를 셀을 복사하여 구성한다. excel파일에 IA문서 버전을 기록하면 버전관리에 도움이 된다.</p>
+				<div class="btn-wrap txt-l">
+					<a href="/vanilla/resources/data/codinglist.xlsx" class="btn-base"><span>샘플 코딩리스트 excel 다운로드</span></a>
+				</div>
+
+
+				<h2 class="h2">HTML Structure</h2>
+<div class="box-code">
+<pre>
+<code>
+&lt;div <span class="na">class=</span><span class="s">"ui-codinglist"</span> <span class="na">id=</span><span class="s">"uiCodinglist"</span>&gt;&lt;/div&gt;
+</code>
+</pre>
+</div>
+
+				
+
+				<h2 class="h2">Javascript</h2>
+				<h3 class="h3">코딩 리스트 json</h3>
+				<p>코딩 리스트 excel파일의 data를 드래그 카피하여 지정된 json파일에 복사한다.</p>
+<div class="box-code">
+<pre>
+<code>
+{"list":[
+{"state":"상태","date":"일정","enddate":"종료일","pub":"퍼블","id":"화면ID","d1":"D1","d2":"D2","d3":"D3","d4":"D4","d5":"D5","d6":"D6","d7":"D7","d8":"D8","r1":"경로","r2":"","r3":"","r4":"","page":"","memo":"메모"},
+{"state":"완료","date":"180131","enddate":"171217","pub":"조현민","id":"form","d1":"UI","d2":"form","d3":"radio&checkbox","d4":"","d5":"","d6":"","d7":"","d8":"","r1":"ui","r2":"","r3":"","r4":"","page":"","memo":""}
+]}
+</code>
+</pre>
+</div>
+
+				<h3 class="h3">$plugins.uiCodinglist</h3>
+<div class="box-code">
+<pre>
+<code>
+$plugins<span class="na"></span>.uiCodinglist</span>({ <span class="si">id:'uiCodinglist', url:'/vanilla/resources/data/codinglist.json', type:'json'</span>});
+</code>
+</pre>
+</div>
+				<table class="tbl-base type-option">
+				<caption>옵션 설명</caption>
+				<colgroup>
+					<col class="col-xxs">
+					<col class="col-xxs">
+					<col class="col-xxs">
+					<col class="col-auto">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">옵션명</th>
+						<th scope="col">유형</th>
+						<th scope="col">기본</th>
+						<th scope="col">설명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="nec">
+						<th scope="row">id:</th>
+						<td>[string]</td>
+						<td>'name'</td>
+						<td>(필수) 코딩리스트를 적용 시킬 영역(ui-codinglist)의 id 명</td>
+					</tr>
+					<tr class="nec">
+						<th scope="row">url:</th>
+						<td>[string]</td>
+						<td>'link'</td>
+						<td>(필수) 코딩리스트 정보를 불러올 json or html 파일 경로</td>
+					</tr>
+					<tr>
+						<th scope="row">type:</th>
+						<td>[string]</td>
+						<td>'json'</td>
+						<td>문서타입 설정. 기본으로 json 문서 타입 설정됨
+							<ul>
+							<li>'json'</li>
+							<li>'html'</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+				</table>
+
+			</main>
+		</div>
+	</div>
+
+	<!-- only page script -->
+	<script>
+		;(function($, win, doc, undefined) {
+			console.log('page ready before')
+			$plugins.common.pageid = 'G_03_10_00_00';
+
+			$(doc).ready(function(){
+				
+				console.log('page ready after')
+				$plugins.page.jsoncodinglist();
+
+			});
+		})(jQuery, window, document);
+	</script>
+
+</body>
+</html>
