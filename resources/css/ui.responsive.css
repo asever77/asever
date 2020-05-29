@@ -86,7 +86,7 @@
     .header-nav .dep-1 .ui-acco-btn:after{display:none;}
     .header-nav .dep-1-btn {display:inline-block; width:100%; font-size:16px; font-weight:300; color:#000; margin:0; letter-spacing:0; text-decoration:none; margin-bottom:15px;}
     .header-nav .dep-2-wrap{padding-bottom:30px;}
-    .header-nav .dep-2-btn {display:inline-block; width:100%; font-size:12px; font-weight:300; color:#000; margin:0; letter-spacing:0; text-decoration:none; margin-bottom:5px;}
+    .header-nav .dep-2-btn {display:inline-block; width:100%; font-size:12px; font-weight:300; color:#000; margin:0; letter-spacing:0; text-decoration:none; margin-bottom:5px; text-align:left;}
     .header-nav .dep-2-btn span {display:inline-block; vertical-align:top; width:calc(100% - 20px)}
     .header-nav .dep-2-btn:before{content:"-"; display:inline-block; margin-right:5px; width:10px; line-height:1.3; vertical-align:top;}
     .header-nav .dep-2-btn.selected{font-weight:500;}
