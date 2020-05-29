@@ -57,6 +57,8 @@ a.ui-acco-btn .ui-acco-arrow {transform: rotate(-90deg);}
 a.ui-acco-btn:after{content:"keyboard_arrow_right";}
 
 .ui-acco-pnl{position:relative; box-sizing:border-box; background:#f9f9f9; margin:0; padding:0; height:auto; overflow:hidden; transition:height 0.2s ease-in; transition-delay:5s;}
+/* .ui-acco-pnl[aria-hidden="true"]{visibility: hidden;}
+.ui-acco-pnl[aria-hidden="false"]{visibility: visible;} */
 .ui-acco-pnl-wrap{width:100%; padding:20px; position: absolute;}
 .in-acco > .ui-acco-pnl-wrap{position: relative;}
 .acco-hide > .in-acco > .ui-acco-pnl-wrap{position: absolute;}
