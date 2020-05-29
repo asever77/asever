@@ -5,8 +5,8 @@
     $plugins.common = {
  
         init: function(){
-            $plugins.uiAjax({ id:'baseHeader', url:'/vanilla/html/inc/header.html', page:true, callback:$plugins.common.header });
-            $plugins.uiAjax({ id:'baseFooter', url:'/vanilla/html/inc/footer.html', page:true, callback:$plugins.common.footer });
+            $plugins.uiAjax({ id:'baseHeader', url:'/asever/html/inc/header.html', page:true, callback:$plugins.common.header });
+            $plugins.uiAjax({ id:'baseFooter', url:'/asever/html/inc/footer.html', page:true, callback:$plugins.common.footer });
             
             console.log('------------------------------------------------------')
             
@@ -31,7 +31,7 @@
         
         header: function(){
             console.log('header load');
-            $plugins.uiAjax({ id:'baseAside', url:'/vanilla/html/inc/aside.html', page:true });
+            $plugins.uiAjax({ id:'baseAside', url:'/asever/html/inc/aside.html', page:true });
             $plugins.common.pageid === undefined ? $plugins.common.pageid = "G00_00_00_00" : '';
             
             var timer = '';
@@ -64,7 +64,7 @@
             }
 
             $plugins.uiMenu({ 
-                url:'/vanilla/resources/data/menu.json', 
+                url:'/asever/resources/data/menu.json', 
                 ctg:'가이드', 
                 selected: $plugins.common.pageid, 
                 callback: fncallback 

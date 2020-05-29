@@ -1126,7 +1126,7 @@
 				state = opt.state,
 				is_alert = type === 'alert' ? true : false,
 				class_name,
-				system_url = is_alert ? '/vanilla/html/modal/modalAlert.html' : '/vanilla/html/modal/modalConfirm.html';
+				system_url = is_alert ? '/asever/html/modal/modalAlert.html' : '/asever/html/modal/modalConfirm.html';
 
 			switch (state) {
 				case '알림': 

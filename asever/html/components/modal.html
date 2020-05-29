@@ -8,12 +8,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="mobile-web-app-capable" content="yes">
 
-	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
-	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+	<link rel="apple-touch-icon" href="/asever/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/asever/resources/img/common/ico_favicon.ico"> 
 
 	<title>Netive UI</title>
 
-	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+	<link rel="stylesheet" href="/asever/resources/css/ui.base.css">
 </head>
 
 <body id="BODY">
@@ -37,7 +37,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiModal({ 
 							id:'modal_sample1', 
-							link:'/vanilla/html/modal/modalSample1.html', 
+							link:'/asever/html/modal/modalSample1.html', 
 							remove:true, 
 							openback: function() { console.log('open callback'); },
 							closeback: function(v) { console.log('close callback', v); },
@@ -48,7 +48,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiModal({ 
 							id:'modal_sample2', 
-							link:'/vanilla/html/modal/modalSample2.html', 
+							link:'/asever/html/modal/modalSample2.html', 
 							remove:true, 
 							mpage: true,
 							openback: function() { console.log('open callback2'); },
@@ -61,7 +61,7 @@
 						$plugins.uiModal({ 
 							id:'modal_sample5', 
 							width: 600,
-							link:'/vanilla/html/modal/modalSample5.html', 
+							link:'/asever/html/modal/modalSample5.html', 
 							mpage: true,
 							openback: function() { console.log('open callback3'); },
 							closeback: function(v) { console.log('close callback3', v); },
@@ -72,7 +72,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiModal({ id:
 							'modal_sample4', 
-							link:'/vanilla/html/modal/modalSample4.html', 
+							link:'/asever/html/modal/modalSample4.html', 
 							remove:true, 
 							mpage: true,
 							openback: function() { console.log('open callback3'); },
@@ -87,14 +87,14 @@
 							remove: true,
 							mpage: true,
 							iname : 'iframe_modal_sample3',
-							isrc: '/vanilla/html/modal/modalSample3.html',
+							isrc: '/asever/html/modal/modalSample3.html',
 							ititle:'아이프레임 팝업'
 						});
 					"><span>Ajax 기본 팝업(iframe)</span></button>
 
 
 					<button type="button" class="btn-base" onclick="
-						$plugins.uiModal({ id:'modal_sample1', link:'/vanilla/html/modal/modalSample1.html', ps:'top', remove:true, callback:$plugins.page.callback });
+						$plugins.uiModal({ id:'modal_sample1', link:'/asever/html/modal/modalSample1.html', ps:'top', remove:true, callback:$plugins.page.callback });
 					"><span>Ajax 기본 팝업(top)</span></button>
 				</div>
 
@@ -104,7 +104,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiSimpleModalOpen({ 
 							id:'modal_sample1', 
-							src:'/vanilla/html/modalSp/modalSample1.html', 
+							src:'/asever/html/modalSp/modalSample1.html', 
 							full: true,
 							openback: function() { console.log('open callback'); },
 							closeback: function(v) { console.log('close callback', v); },
@@ -115,7 +115,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiSimpleModalOpen({ 
 							id:'modal_sample1', 
-							src:'/vanilla/html/modalSp/modalSample1.html', 
+							src:'/asever/html/modalSp/modalSample1.html', 
 							openback: function() { console.log('open callback'); },
 							closeback: function(v) { console.log('close callback', v); },
 							callback:$plugins.page.callback 
@@ -125,7 +125,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiSimpleModalOpen({ 
 							id:'modal_sample1', 
-							src:'/vanilla/html/modalSp/modalSample1.html', 
+							src:'/asever/html/modalSp/modalSample1.html', 
 							ps: 'top',
 							openback: function() { console.log('open callback'); },
 							closeback: function(v) { console.log('close callback', v); },
@@ -136,7 +136,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiSimpleModalOpen({ 
 							id:'modal_sample1', 
-							src:'/vanilla/html/modalSp/modalSample1.html', 
+							src:'/asever/html/modalSp/modalSample1.html', 
 							ps: 'bottom',
 							openback: function() { console.log('open callback'); },
 							closeback: function(v) { console.log('close callback', v); },
@@ -147,7 +147,7 @@
 					<button type="button" class="btn-base" onclick="
 						$plugins.uiSimpleModalOpen({ 
 							id:'modal_sample2', 
-							src:'/vanilla/html/modalSp/modalSample2.html', 
+							src:'/asever/html/modalSp/modalSample2.html', 
 							remove:true, 
 							mpage: true,
 							openback: function() { console.log('open callback2'); },
@@ -289,7 +289,7 @@ $plugins<span class="na">.uiModal</span>({ <span class="s">
 	ps:'top' 
 	endfocus:'idname', 
 	full:true, 
-	link:'/vanilla/html/modal/sample.html', 
+	link:'/asever/html/modal/sample.html', 
 	openback: function() { console.log('open callback'); },
 	closeback: function() { console.log('close callback'); }</span> 
 });
@@ -557,12 +557,12 @@ $plugins<span class="na">.uiModalClose</span>({ <span class="s">
 	</div>
 	
 	<!-- only page script -->
-	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
-	<script src="/vanilla/resources/js/ui.global.js"></script>
-	<script src="/vanilla/resources/js/ui.common.js"></script>
+	<script src="/asever/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/asever/resources/js/ui.global.js"></script>
+	<script src="/asever/resources/js/ui.common.js"></script>
 
-	<script src="/vanilla/resources/js/ui.plugins.menu.js"></script>
-	<script src="/vanilla/resources/js/ui.plugins.modal.js"></script>
+	<script src="/asever/resources/js/ui.plugins.menu.js"></script>
+	<script src="/asever/resources/js/ui.plugins.modal.js"></script>
 	<script>
 		;(function($, win, doc, undefined) {
 			console.log('page ready before')
@@ -574,10 +574,10 @@ $plugins<span class="na">.uiModalClose</span>({ <span class="s">
 				// $('.btn-base').on('click', function(){
 				// 	switch($(this).attr('id')){
 				// 	case 'modalOpen1':
-				// 		$plugins.uiModal({ id:'modal_sample1', link:'/vanilla/html/modal/modalSample1.html', callback:$plugins.page.callback });
+				// 		$plugins.uiModal({ id:'modal_sample1', link:'/asever/html/modal/modalSample1.html', callback:$plugins.page.callback });
 				// 		break;
 				// 	case 'modalOpen2':
-				// 		$plugins.uiModal({ id:'modal_sample2', link:'/vanilla/html/modal/modalSample2.html', callback:$plugins.page.callback, width:700 });
+				// 		$plugins.uiModal({ id:'modal_sample2', link:'/asever/html/modal/modalSample2.html', callback:$plugins.page.callback, width:700 });
 				// 		break;
 				// 	}
 

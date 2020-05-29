@@ -8,15 +8,15 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="mobile-web-app-capable" content="yes">
 
-	<link rel="apple-touch-icon" href="/vanilla/resources/img/common/ico_app.png" >
-	<link rel="shortcut icon" href="/vanilla/resources/img/common/ico_favicon.ico"> 
+	<link rel="apple-touch-icon" href="/asever/resources/img/common/ico_app.png" >
+	<link rel="shortcut icon" href="/asever/resources/img/common/ico_favicon.ico"> 
 
 	<title>Netive UI</title>
 
-	<link rel="stylesheet" href="/vanilla/resources/css/ui.base.css">
+	<link rel="stylesheet" href="/asever/resources/css/ui.base.css">
 
-	<script src="/vanilla/resources/js/lib/jquery-1.12.4.min.js"></script>
-	<script src="/vanilla/resources/js/ui.base.js"></script>
+	<script src="/asever/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="/asever/resources/js/ui.base.js"></script>
 </head>
 
 <body class="page-menu">
@@ -42,7 +42,7 @@
                 <h3 class="h3">메뉴 리스트 excel</h3>
                 <p>메뉴구조도를 엑셀에 정리하여 관리한다.</p>
                 <div class="btn-wrap txt-l">
-                    <a href="/vanilla/resources/data/menu.xlsx" class="btn-base"><span>샘플 메뉴 엑셀 다운로드</span></a>
+                    <a href="/asever/resources/data/menu.xlsx" class="btn-base"><span>샘플 메뉴 엑셀 다운로드</span></a>
                 </div>
 
 
@@ -63,7 +63,7 @@
 <pre>
 <code>
 {"menu":[
-{"id":"","use":"N","code":"G_00_00_00_00","ctg":"가이드","d1":"Main","n1":"G00","d2":"","order":"","d3":"","d4":"","link":"/vanilla/html/index.html","blank":"","pop":"","tit":"Main"},
+{"id":"","use":"N","code":"G_00_00_00_00","ctg":"가이드","d1":"Main","n1":"G00","d2":"","order":"","d3":"","d4":"","link":"/asever/html/index.html","blank":"","pop":"","tit":"Main"},
 {"id":"","use":"Y","code":"G_01_01_00_00","ctg":"가이드","d1":"Guide","n1":"G01","d2":"","order":"","d3":"","d4":"","link":"#","blank":"","pop":"","tit":"Guide"},
 {"id":"","use":"Y","code":"G_01_01_00_00","ctg":"가이드","d1":"","n1":"G01","d2":"Getting Started","order":"1","d3":"","d4":"","link":"#","blank":"","pop":"","tit":"Getting Started"},
 ...
@@ -76,7 +76,7 @@
 <pre>
 <code>
 $plugins<span class="na"></span>.uiMenu</span>({ <span class="si">
-    url:'/vanilla/resources/data/menu.json', 
+    url:'/asever/resources/data/menu.json', 
     ctg:'개인', 
     selected:'P_02_01_01_00', 
     callback:function(v){...}</span>
@@ -154,7 +154,7 @@ $plugins<span class="na"></span>.uiMenu</span>({ <span class="si">
 			$(doc).ready(function(){
 				
 				console.log('page ready after')
-				$plugins.uiMenu({ id:'uiTest', url:'/vanilla/resources/data/menu.json', ctg:'전체', selected:'G_01_03_02_00', callback:fncallback });
+				$plugins.uiMenu({ id:'uiTest', url:'/asever/resources/data/menu.json', ctg:'전체', selected:'G_01_03_02_00', callback:fncallback });
                 function fncallback(opt){
                     var d1 = opt.d1,
                         d2 = opt.d2,

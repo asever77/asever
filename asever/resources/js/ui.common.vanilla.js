@@ -8,7 +8,7 @@
             console.log('init');
             $plugins.uiAjax({ 
                 id: 'baseHeader', 
-                url: '/vanilla/html/inc/header.html', 
+                url: '/asever/html/inc/header.html', 
                 page: true, 
                 callback: $plugins.common.header
             });

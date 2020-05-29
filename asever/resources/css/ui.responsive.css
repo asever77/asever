@@ -4,7 +4,7 @@
 .ui-d [class*="tbl-base"] {table-layout:fixed;}
 .ui-d .is-scr .tbl-scroll-thead{padding-right:17px;}
 /* page */
-.main-visual{background:#b1afb4 url(/vanilla/resources/img/common/main_visual_m.jpg) no-repeat 50% 0; background-size:contain}
+.main-visual{background:#b1afb4 url(/asever/resources/img/common/main_visual_m.jpg) no-repeat 50% 0; background-size:contain}
 
 
 /* colunns 4 / gutters 16 ---------------- */
@@ -20,7 +20,7 @@
 @media all and (max-width:599px) and (orientation:landscape) { 
     body:after{content:"small handset landscape"; display:block; position:fixed; bottom:0; right:0; padding:5px; background:#000; color:#fff; font-size:12px; z-index:1000; opacity:0.5}
 
-    .main-visual{background:#b1afb4 url(/vanilla/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
+    .main-visual{background:#b1afb4 url(/asever/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
 }
 
 /* colunns 8 / gutters 16 ---------------- */
@@ -29,13 +29,13 @@
     body:after{content:"tablet & handset landscape"; display:block; position:fixed; bottom:0; right:0; padding:5px; background:#000; color:#fff; font-size:12px; z-index:1000; opacity:0.5}
 
 
-    .main-visual{background:#b1afb4 url(/vanilla/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
+    .main-visual{background:#b1afb4 url(/asever/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
 }
 /* tablet  */ 
 @media all and (min-width:600px) and (max-width:1112px) and (orientation:portrait) {
     body:after{content:"tablet"; display:block; position:fixed; bottom:0; right:0; padding:5px; background:#000; color:#fff; font-size:12px; z-index:1000; opacity:0.5}
 
-    .main-visual{background:#b1afb4 url(/vanilla/resources/img/common/main_visual_m.jpg) no-repeat 50% 0; background-size:cover}
+    .main-visual{background:#b1afb4 url(/asever/resources/img/common/main_visual_m.jpg) no-repeat 50% 0; background-size:cover}
 }
 
 
@@ -121,7 +121,7 @@
     .navi-wrap span{display:inline-block; margin-left:10px; font-size:11px; color:rgb(110, 110, 110)}
     .navi-wrap strong{display:inline-block; margin-left:10px; font-size:13px; color:rgb(53, 53, 53)}
 
-    .main-visual{background:url(/vanilla/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
+    .main-visual{background:url(/asever/resources/img/common/main_visual.jpg) no-repeat 50% 0; background-size:cover}
     
 
 }

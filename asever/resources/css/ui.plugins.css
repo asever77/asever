@@ -101,7 +101,7 @@ a.ui-acco-btn:after{content:"keyboard_arrow_right";}
 .datepicker-head-btn{position:absolute; width:100%; z-index:1;}
 .datepicker-head-today{position:absolute; z-index:1; top:0; left:0; padding:0;}
 .datepicker-head-today button{width:30px; height:30px;}
-.datepicker-head-btn button{position:absolute; width:23px; height:23px; background:url(/vanilla/resources/img/common/ico_datepicker.png) no-repeat 0 0; top:8px}
+.datepicker-head-btn button{position:absolute; width:23px; height:23px; background:url(/asever/resources/img/common/ico_datepicker.png) no-repeat 0 0; top:8px}
 .datepicker-head-btn .ui-datepicker-prev{background-position:-50px 0; left:35px}
 .datepicker-head-btn .ui-datepicker-next{background-position:-50px -50px; right:35px;}
 .datepicker-head-btn .ui-datepicker-prev-y{background-position:0 0; left:10px}
@@ -252,7 +252,7 @@ td button.today{color:#000; font-weight:900; background:#fff; border:1px solid t
 .ui-select{position:relative; display:inline-block; vertical-align:top}
 .ui-select select{width:100%;}
 .ui-select select.off{position:absolute; left:-9999px; width:0; height:0; border:0; opacity:0; z-index:-1; color:transparent; overflow:hidden; font-size:xx-small; line-height:0;} 
-.ui-select-btn{display:inline-block; position:relative; text-align:left; vertical-align:top; width:100%; height:40px; padding:0 30px 0 10px; border-radius:2px; background:#fff url(/vanilla/resources/img/common/ico_form.png) no-repeat 100% -106px; background-size:200px 200px; border:1px solid #c9c9c9; font-size:14px; cursor:pointer; outline:0; box-sizing:border-box; text-overflow:ellipsis;}
+.ui-select-btn{display:inline-block; position:relative; text-align:left; vertical-align:top; width:100%; height:40px; padding:0 30px 0 10px; border-radius:2px; background:#fff url(/asever/resources/img/common/ico_form.png) no-repeat 100% -106px; background-size:200px 200px; border:1px solid #c9c9c9; font-size:14px; cursor:pointer; outline:0; box-sizing:border-box; text-overflow:ellipsis;}
 .ui-select-btn span{display:inline-block; width:100%; text-align:left; word-break:nowrap; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; text-align:left}
 .ui-select-btn[aria-expanded="true"],
 .ui-select-btn:focus,
@@ -502,7 +502,7 @@ td button.today{color:#000; font-weight:900; background:#fff; border:1px solid t
 
 .modal-system .ui-modal-cont{text-align:center; padding:20px; font-size:16px;}
 .modal-system .btn-wrap {margin-top:20px;}
-.modal-system .ui-modal-cont:before{content:""; display:inline-block; width:50px; height:50px; background:url(/vanilla/resources/img/common/ico_modal.png) no-repeat -25px -25px; margin-bottom:20px;}
+.modal-system .ui-modal-cont:before{content:""; display:inline-block; width:50px; height:50px; background:url(/asever/resources/img/common/ico_modal.png) no-repeat -25px -25px; margin-bottom:20px;}
 
 .modal-system .system-type-a:before{background-position:-25px -25px}
 .modal-system .system-type-b:before{background-position:-125px -25px}

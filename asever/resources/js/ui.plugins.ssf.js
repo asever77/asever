@@ -423,7 +423,7 @@ modify		:
 		var id = opt.id;
 
 		$global.uiAjax({
-			url: '/vanilla/resources/json/cf.json',
+			url: '/asever/resources/json/cf.json',
 			page: false,
 			callback: callback
 		});
@@ -4248,7 +4248,7 @@ modify		:
 					table += '<td class="name dev"><span>' + dev + '</span></td>';
 					/*
 					if (!!id) {
-						table += '<td class="img"><span><a href="/vanilla/resources/json/design/'+ imgroot + '/'+ id +'.png" target="design"><img src="/vanilla/resources/json/design/img.png" alt=""></a></span></td>';
+						table += '<td class="img"><span><a href="/asever/resources/json/design/'+ imgroot + '/'+ id +'.png" target="design"><img src="/asever/resources/json/design/img.png" alt=""></a></span></td>';
 					} else {
 						table += '<td class="img"></td>';
 					}
@@ -5197,7 +5197,7 @@ modify		:
 		//	$('body').data('searchload', true);
 
 			$('head')
-				.append('<script src="/vanilla/resources/js/rts.min.js"></script>')
+				.append('<script src="/asever/resources/js/rts.min.js"></script>')
 				.append('<link rel="stylesheet" type="text/css" href="/search/rts.min.css">');
 
 			$global.uiAjax({ id: 'uiSearchSolution', url: '/search/index.html', page: true });
@@ -5224,7 +5224,7 @@ modify		:
 		if (!$uiUtlSrch.data('searchload')) {
 			$uiUtlSrch.data('searchload', true);
 			$('head')
-				.append('<script src="/vanilla/resources/js/rts.min.js"></script>')
+				.append('<script src="/asever/resources/js/rts.min.js"></script>')
 				.append('<link rel="stylesheet" type="text/css" href="/search_sf/rts.min.css">');
 
 			$global.uiAjax({ id: 'uiSearchSolution', url: '/search_sf/index.html', page: true });

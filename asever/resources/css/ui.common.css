@@ -440,7 +440,7 @@ input[type="date"] {appearance: none; -webkit-appearance: none;}
 
 /* base form:select */
 select {display:inline-block; position:relative; vertical-align:top; width:auto; height:40px; padding:0 40px 0 10px; border-radius:2px; 
-background:#fff url(/vanilla/resources/img/common/ico_form.png) no-repeat 100% -106px; background-size:200px 200px; appearance:none; -moz-appearance:none; -webkit-appearance:none; border:1px solid #c9c9c9; font-size:14px; cursor:pointer;}
+background:#fff url(/asever/resources/img/common/ico_form.png) no-repeat 100% -106px; background-size:200px 200px; appearance:none; -moz-appearance:none; -webkit-appearance:none; border:1px solid #c9c9c9; font-size:14px; cursor:pointer;}
 select::-ms-expand {display:none;}
 select optgroup,
 select option {font-style:normal; background-color:#fff; font-size:13px;}
@@ -706,7 +706,7 @@ a.btn-base-s{padding:7px 20px 3px;}
 a.btn-base-l{padding:21px 20px 16px;}
 
 /* button icon style */
-[class*="btn-base"].ico-print:after {content:""; display:inline-block; width:20px; height:20px; background:url(/vanilla/resources/img/common/ico_btn.png) no-repeat -15px -15px; margin-left:5px; vertical-align:middle; margin-top:-3px;}
+[class*="btn-base"].ico-print:after {content:""; display:inline-block; width:20px; height:20px; background:url(/asever/resources/img/common/ico_btn.png) no-repeat -15px -15px; margin-left:5px; vertical-align:middle; margin-top:-3px;}
 
 /* base button :X close, del button ... */
 .btn-del,
